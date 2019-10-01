@@ -1,0 +1,22 @@
+﻿@model Menu_Content
+@{
+    ViewData["Title"] = "Detail";
+}
+
+        <div class="container-fluid" >
+
+            <div class="row mt-5">
+                <div class="col-12 mt-5">
+                    <h3>@Model.Title</h3>
+                    <p>@Model.Description</p>
+                    <p>@Model.Price</p>
+
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <a asp-action="Index"><i class=" far fa-arrow-alt-circle-left"></i>  Go Back</a>
+                </div>
+            </div>
+        </div>
+   

@@ -1,0 +1,747 @@
+
+
+
+header{
+    width: 100%;
+    height: 560px;
+    
+    background-size: cover;
+
+}
+
+header:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 560px;
+    display: block;
+    background-color: rgba(0,0,0,0.50);
+}
+
+/* ------------------------------------------------ */
+/* ABOUT US CSS STARTS*/
+/* ------------------------------------------------ */
+
+
+/* <!-- GET THE BEST SECTION STARTS --> */
+.left-img img{
+width: 99% ;
+}
+.right-img img{
+    width: 99% ;
+    }
+
+
+
+.btn-get-the-best {
+    position: relative;
+    padding: 13px 36px;
+    line-height: 24px;
+    color: #232323;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid white;
+    text-transform: uppercase;
+    transition: all 0.4s linear;
+}
+.btn-get-the-best:hover{
+    border: 2px solid burlywood;
+}
+
+/* <!-- GET THE BEST SECTION ends --> */
+/* carousel starts */
+.carousel-item{
+    height: 600px;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+}
+.carousel-control-prev-icon{
+    width: 40px;
+    height: 40px;
+}
+.carousel-control-next-icon{
+    width: 40px;
+    height: 40px;
+}
+/* carousel ends */
+/* --------------- */
+/* <!-- THE PLACE STARTS --> */
+.the-place{
+    width: 100%;
+    height: 600px;
+    background-image: url('http://monde.elitelayers.com/html/images/background/7.jpg');
+    background-size: cover;
+}
+.the-place .transparent{
+    /* background: transparent !important; */
+    height: 380px;
+
+}
+.the-place .darkBlue{
+    height: 380px;
+    background-color: #01031e;
+}
+
+.bordered-div{
+    border: 0.5px solid rgba(255,255,255,0.30);
+    height: 90%;
+
+}
+.bordered-div h3{
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    padding: 0px 75px;
+}
+.bordered-div p{
+    position: relative;
+    color: #d1d1d1;
+    font-size: 15px;
+    padding: 0px 75px;
+}
+
+
+/* <!-- THE PLACE ends --> */
+
+
+.the-team img{
+    width: 100%;
+}
+/* ------------------------------------------------ */
+/* ABOUT US CSS ENDS */
+/* ------------------------------------------------ */
+/* ////////////////////////////////////////// */
+
+
+/* ------------------------------------------------ */
+/* MENU CSS STARTS */
+/* ------------------------------------------------ */
+.COCKTAIL-CARD{
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-size: cover;
+    background: url('http://monde.elitelayers.com/html/images/background/8.jpg');
+    background-position: center center;
+    color: white;
+}
+.COCKTAIL-CARD a{
+    color: white ;
+}
+.COCKTAIL-CARD .layout{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: relative;
+    background: rgba(0, 0, 0, 0.6);
+}
+.todays-special img{
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
+/* ------------------------------------------------ */
+/* MENU CSS ENDS */
+/* ------------------------------------------------ */
+
+
+
+/* ------------------------------------------------ */
+/*CHEFS CSS ENDS */
+/* ------------------------------------------------ */
+.chef-image{
+    background-image: url("http://monde.elitelayers.com/html/images/resource/image-3.jpg");
+    width: 100%;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.eyro{
+    background-color: #f5f5f5 !important;
+}
+
+.eyro::after{
+    position: absolute;
+    content: '';
+    right: -50px;
+    top: -22px;
+    width: 200px;
+    height: 100%;
+    z-index: 10;
+    background-color: #f5f5f5;
+    transform: rotate(10deg);
+
+
+}
+
+/* <!-- Chef Starts --> */
+
+.master-chef .background{
+    background: #f5f5f5 !important;
+    height: auto;
+}
+
+.left{
+    height: 400px;
+}
+
+.background img{
+    width: 100%;
+}
+.master-chef .col-lg-6{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/* ------------------------------------------------ */
+/* CHEFS CSS ENDS */
+/* ------------------------------------------------ */
+
+
+/* ------------------------------------------------ */
+/* EVENTS CSS STARTS */
+/* ------------------------------------------------ */
+.date{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 77px;
+    min-width: 77px;
+    font-size: 44px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    padding: 0px 0px;
+    letter-spacing: 1px;
+    background-color: #01031e !important;
+}
+.date span{
+    color: #d1d1d1;
+    font-size: 9px;
+    font-weight: 400;
+    display: block;
+    letter-spacing: 1px;
+    /* margin-top: 4px; */
+    text-transform: uppercase;
+   margin-top: -7px;
+}
+.inner{
+    position: relative;
+}
+.image img{
+    width: 100%;
+}
+.events .col-9 a h5{
+    transition: 0.3s linear;
+    font-weight: bold;
+}
+.events .col-9 a:hover{
+color: #8b755a;
+}
+
+
+
+/* ------------------------------------------------ */
+/* EVENTS CSS ENDS */
+/* ------------------------------------------------ */
+
+
+/* ------------------------------------------------ */
+/* LOCATIONS CSS STARTS */
+/* ------------------------------------------------ */
+header:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 560px;
+    display: block;
+    background-color: rgba(0,0,0,0.50);
+}
+.locations img{
+    width: 100%;
+}
+.locations button{
+    position: relative;
+    padding: 13px 36px;
+    line-height: 24px;
+    color: #232323;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: 2px solid white;
+    text-transform: uppercase;
+    transition: all 0.4s linear;
+}
+.locations button:hover{
+    color: #8b755a;
+    background: none;
+    border-color: #8b755a;
+    border: 2px solid burlywood;
+}
+
+
+/* ------------------------------------------------ */
+/* LOCATIONS CSS ENDS */
+/* ------------------------------------------------ */
+
+
+
+/* ------------------------------------------------ */
+/* RESERVATION CSS STARTS */
+/* ------------------------------------------------ */
+.telephone-reservation h3{
+    position: relative;
+    color: #232323;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.telephone-reservation h5{
+    position: relative;
+    color: #585858;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 70px;
+}
+.telephone-reservation img{
+    width: 100%;
+}
+
+
+
+/* ------------------------------------------------ */
+/* RESERVATION CSS ENDS */
+/* ------------------------------------------------ */
+
+/* ------------------------------------------------ */
+/* Gallery CSS STARTS */
+/* ------------------------------------------------ */
+.gallery .col-lg-3 h1{
+    position: relative;
+    color: #232323;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+
+}
+.gallery .col-lg-3 p{
+    position: relative;
+    color: #343434;
+    font-size: 17px;
+    line-height: 1.7em;
+    text-align: center;
+}
+
+.gallery .col-12{
+    margin-top: 60px;
+}
+.gallery .col-12 img{
+    width: 100%;
+}
+
+
+
+/* ------------------------------------------------ */
+/* Gallery CSS ENDS */
+/* ------------------------------------------------ */
+
+
+/* SHOP-SINGLE STARTS */
+.productName h4{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0px 0px;
+    line-height: 1.4em;
+    color: #232323;
+    margin-bottom: 5px;
+}
+.productPrice span{
+    font-size: 20px;
+    font-weight: 400;
+    color: #232323;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+.productInfo p{
+    margin-bottom: 30px;
+    line-height: 2em;
+    font-size: 14px;
+    color: #616060;
+    margin-top: 30px;
+}
+
+.cart img{
+    width: 100%;
+}
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 26px;
+    width: 30px;
+}
+.cart .col-12 .btn{
+    margin-top: 10px;
+}
+.cart .col-12 .addBtn{
+    position: relative;
+    padding: 13px 43px;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    background: #8b755a;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 2px solid #8b755a;
+    text-transform: uppercase;
+    transition: 0.3s linear;
+}
+.addBtn:hover {
+    color: #8b755a !important;
+    background: none !important;
+    border-color: #8b755a;
+}
+.items{
+    margin: 5px 0px 0px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #232323;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+.items span{
+    font-weight: 400;
+    color: #616060;
+    margin-left: 5px;
+    text-transform: capitalize;
+}
+
+.col-2 h5{
+    border-bottom: 2px solid #8b755a;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #8b755a;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px 0px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    margin-right: 35px;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: all 300ms ease;
+
+}
+.active{
+    border-bottom: 2px solid #8b755a !important;
+    color: #8b755a !important;
+    transition: 0.4s linear;
+}
+.cart .btnContent{
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: #b6b6b6;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px 0px;
+    line-height: 24px;
+    letter-spacing: 1px;
+
+}
+.cart .btnReview{
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: #b6b6b6;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px 0px;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+.content{
+    /* display: none; */
+    transition: 0.4s linear;
+}
+.comment{
+    display:none;
+    transition: 0.4s linear;
+
+}
+.comment h4{
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #222222;
+    margin-bottom: 15px;
+}
+.rating{
+    padding-left: 15px;
+}
+.rev-content{
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    background: #ffffff;
+
+}
+.rev-info{
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.rev-content p{
+    color: #616060;
+    font-size: 14px;
+}
+.users-rating span{
+font-size: 0.8em;
+}
+.users-rating .fa-star{
+    cursor: pointer;
+    font-size: 10px;
+}
+.fa-times-circle{
+    font-size: 25px;
+    cursor: pointer;
+}
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1px;
+}
+.modal-footer {
+    text-align: center;
+
+    /* display: flex; */
+    -ms-flex-align: none;
+    align-items: center;
+    /* -ms-flex-pack: end; */
+    justify-content: center;
+    padding: 0;
+    border-top: none;
+    padding: 2px 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
+/* SHOP-SINGLE ENDS */
+.also-like img{
+    width: 100%;
+    cursor: pointer;
+}
+.also-like .layout{
+    background: rgba(0, 0, 0, 0.4);
+    width: 0;
+    height: 0;
+    visibility:hidden;
+    transition: 0.2s linear ;
+}
+
+.also-like .col-12:hover .addBtn{
+    /* display: block; */
+
+}
+.also-like .addBtn{
+    position: relative;
+    padding: 13px 43px;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    background: #8b755a;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 2px solid #8b755a;
+    text-transform: uppercase;
+    margin-top: 75%;
+    /* display: none; */
+}
+.also-like .addBtn:hover {
+    color: white !important;
+    background: #8b755a !important;
+    border-color: #8b755a;
+}
+
+/* shop now */
+
+.shop-now p{
+    position: relative;
+    color: #8c8c8c;
+    font-size: 14px;
+}
+.shop-now .receipt-text{
+    position: relative;
+    color: #616060;
+    font-size: 14px;
+    line-height: 1.8em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.shop-now .post-date{
+    position: relative;
+    color: #a7a7a7;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    font-family: 'Conv_georgia';
+}
+.shop-now a h4{
+    position: relative;
+    color: #232323;
+    font-size: 18px;
+    transition: 0.3s linear;
+}
+.shop-now a h4:hover{
+
+    color: #a7a7a7;
+
+}
+.read-more{
+    position: relative;
+    color: #8b755a;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.activePage a{
+    position: relative;
+    display: inline-block;
+    line-height: 40px;
+    height: 44px;
+    font-size: 10px;
+    text-transform: capitalize;
+    min-width: 40px;
+    background: none;
+    color: #232323;
+    font-weight: 400;
+    text-align: center;
+    border: 2px solid transparent;
+}
+.activeCount{
+border-color: #232323 !important;
+}
+.activePage p{
+    position: relative;
+    color: #232323;
+    font-size: 10px;
+    float: right;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* basket */
+#basket .list-group img{
+width: 100px;
+height: 100px;
+}
+#basket h6{
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3em;
+
+}
+
+#basket small i{
+transition:all 0.3 linear;
+}
+#basket small i:hover{
+background: red;
+border-radius: 50%;
+}
+
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 326px) {
+    .the-place{
+        display: none !important;
+    }
+
+
+         }
+@media (max-width: 576px) {
+
+.left-img img{
+display: none;
+}
+.right-img img{
+   display: none;
+    }
+
+    .carousel-item{
+        height: 300px;
+    }
+    .COCKTAIL-CARD{
+
+          background: black;
+
+      }
+
+      .productName h4{
+        text-align: center;
+    }
+    .productPrice {
+        text-align: center !important;
+    }
+
+
+
+
+     }
+
+     /* // Medium devices (tablets, 768px and up) */
+     @media (max-width: 768px) {
+        .productName h4{
+            text-align: center;
+        }
+        .productPrice {
+            text-align: center !important;
+        }
+
+
+     }
+
+     /* // Large devices (desktops, 992px and up) */
+     @media (max-width: 992px) {
+
+     }
+
+     /* // Extra large devices (large desktops, 1200px and up) */
+     @media (max-width: 1200px) {
+
+     }
+    /* Responsive--------------------- */
+    /* Responsive--------------------- */

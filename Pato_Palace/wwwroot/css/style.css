@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* slider */
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide .slider_text {
+  width: 100%;
+  height: 100%;
+  padding: 350px 0;
+  color: rgb(189, 58, 58);
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide .header-text {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide .slider_text p {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  letter-spacing: 4px !important;
+  font-size: 22px;
+}
+
+.swiper-slide .slider_text h2 {
+  font-size: 75px;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.3em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.swiper-slide .slider_text h6 {
+  font-family: 'Conv_georgia';
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/* peloader */
+
+#hellopreloader>p {
+  display: none;
+}
+
+#hellopreloader_preload {
+  display: block;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  background: #652628 url(http://hello-site.ru/main/images/preloads/audio.svg) center center no-repeat;
+  background-size: 41px;
+}
+
+/* peloader */
+
+body {
+  height: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black
+}
+
+/* Scroll to top */
+
+a.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  right: 15px;
+  text-decoration: none;
+  z-index: 99999;
+}
+
+a.back-to-top i {
+  display: block;
+  font-size: 22px;
+  width: 45px;
+  height: 45px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #EC1D25;
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+
+a.back-to-top i:hover {
+  background-image: -webkit-linear-gradient(82deg, #821199 10%, #df1e09 90%);
+  -webkit-transform: scale(1.2, 1.2);
+  -ms-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+
+a.back-to-top:hover, a.back-to-top:focus {
+  text-decoration: none;
+}
+
+/* --------------HEADER */
+
+#header_navs #logo_img2 {
+  display: none;
+}
+
+.navbar {
+  background: transparent !important;
+}
+
+.dropdown {
+  padding-right: 5px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link.red {
+  color: #EC1D25;
+}
+
+.nav-link {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  display: block;
+  padding: 10px 0px;
+  font-size: 13px;
+  /* line-height: 30px; */
+  font-weight: 700;
+  opacity: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+}
+
+.nav-link:hover {
+  color: #AFA9A6 !important;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: .25rem;
+  background-color: rgb(87, 25, 25);
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: .25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  border-top: 1px solid brown;
+  color: #fff;
+  transition: all 0.3s linear;
+}
+
+.dropdown-item:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.nav-item i {
+  font-size: 1.5em;
+}
+
+/* basket */
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href], .badge-warning[href] {
+  background-color: #c67605;
+}
+
+#lblCartCount {
+  font-size: 12px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -10px;
+}
+
+/* basket */
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* HEADER-------------- */
+
+/* SECTION Unique */
+
+.firsth-section {
+  margin-top: 130px;
+}
+
+.firsth-section h1 {
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 50px;
+}
+
+.firsth-section .unique-text {
+  /* padding:0px 250px; */
+}
+
+.firsth-section .unique-name {
+  margin-top: 10px;
+  font-family: 'Mr De Haviland', cursive;
+  font-size: 1.5em;
+}
+
+/* SECTION unique*/
+
+/* SECTION photo-menu*/
+
+.menu-image1 img {
+  width: 100%;
+  transition: all 0.4s linear;
+}
+
+.menu-image1 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.0);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transition: all 0.2s linear;
+}
+
+.layout span {
+  color:white;
+  margin: 15px 15px;
+  display: inline-block;
+  font-size: 19px;
+  text-transform: uppercase;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+
+  letter-spacing: 3px;
+}
+
+.menu-image1:hover .layout {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.menu-image1:hover img {
+  transform: scale(1.4) rotate(-15deg);
+}
+
+/* SECTION photo-menu */
+
+/* SECTION MENU  */
+
+/* -------------------- */
+
+/* SECTION Menu */
+
+/* Enjoy together starts */
+
+.enjoy-together {
+ 
+  margin-top: 150px;
+  width: 100%;
+  height: 530px;
+  background-size: cover;
+  position: relative;
+}
+
+/* Enjoy together  ends*/
+
+/* <!-- SECTION Testiominal starts */
+
+.testimonial {
+  margin-top: 100px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  background-size: cover;
+  background: url('http://monde.elitelayers.com/html/images/background/3.jpg')
+}
+
+/* <!-- SECTION Testiominal ends --> */
+
+.information {
+  margin-top: 50px;
+}
+
+/* Gift-Unique section starts */
+
+.gift-unique {
+  margin-top: 100px;
+  height: 500px;
+  position: relative;
+  background: black;
+  color: white;
+}
+
+/* Gift-Unique section ends */
+
+/* Responsive--------------------- */
+
+/* Responsive--------------------- */
+
+@media (max-width: 576px) {
+  /* HEADER RESPONSIVE */
+  header {
+    /* height: 700px; */
+  }
+  .header-text p {
+    font-size: 15px;
+    margin-top: 150px;
+  }
+  .header-text h2 {
+    font-size: 35px;
+  }
+  .header-text h6 {
+    font-size: 10px;
+  }
+  /* section unique */
+  .photo-menu .tho {
+    margin-top: 45px !important;
+  }
+  /* section unique ends*/
+  .enjoy-together .text h1 {
+    font-size: 50px !important;
+  }
+  /* information section starts */
+  /* information section ends */
+  /* HEADER RESPONSIVE */
+}
+
+/* // Medium devices (tablets, 768px and up) */
+
+@media (max-width: 768px) {}
+
+/* // Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1200px) {}
+
+/* Responsive--------------------- */
+
+/* Responsive--------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
