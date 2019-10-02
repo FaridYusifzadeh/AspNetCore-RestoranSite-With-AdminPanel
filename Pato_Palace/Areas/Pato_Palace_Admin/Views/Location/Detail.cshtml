@@ -1,0 +1,25 @@
+﻿@model Location
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+<div class="container-fluid" style="margin-top:110px;">
+
+    <div class="row mt-5">
+        <div class="col-12 mt-5">
+            <h3>@Model.Title</h3>
+            <p class="mt-5">@Model.SubTitle</p>
+            <p class="mt-5">@Model.Description</p>
+            <p class="mt-5">@Model.TitleCode</p>
+            <p class="mt-5">@Model.SubTitleCode</p>
+
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <a asp-action="Index"><i class=" far fa-arrow-alt-circle-left"></i>  Go Back</a>
+        </div>
+    </div>
+</div>
+

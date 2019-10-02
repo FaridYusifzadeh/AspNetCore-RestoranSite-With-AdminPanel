@@ -1,0 +1,24 @@
+﻿@model  Rservation_Content
+@{
+    ViewData["Title"] = "Detail";
+}
+
+    <div class="container-fluid" style="margin-top:110px;">
+
+        <div class="row">
+            <div class="col-12">
+
+
+                <img src="~/Images/bacground_section/@Model.Image" alt="Alternate Text" width="400px" />
+
+                <h3>@Model.Title</h3>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a asp-action="Index"><i class=" far fa-arrow-alt-circle-left"></i>  Go Back</a>
+            </div>
+        </div>
+    </div>
+

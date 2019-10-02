@@ -1,0 +1,29 @@
+﻿@model Reservation
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container-fluid" style="margin-top:115px;">
+    <div class="row">
+        <div class="col-12">
+            <h3>@Model.Title</h3>
+            <p>@Model.Description</p>
+
+            <p class="text-danger">Are you sure delete this data?</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                <input type="submit" class="btn btn-danger" value="Delete" />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <a asp-action="Index"><i class=" fas fa-arrow-left"></i> Go Back</a>
+        </div>
+    </div>
+</div>
+
+
