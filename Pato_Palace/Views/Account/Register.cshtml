@@ -1,0 +1,139 @@
+﻿@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Register</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="~/admin/css/font-face.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="~/admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="~/admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/admin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="~/admin/css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <div class="page-content--bge5" style="height: 800px;">
+            <div class="container">
+                <div class="login-wrap" >
+                    <div class="login-content">
+                        <div class="login-logo">
+                            <a href="#">
+                                <h1 style="color:red;">PatoPalace</h1>
+                                <img src="~/Images/logo/logo2.png" alt="PatoPalace">
+                            </a>
+                            
+                        </div>
+                        <div class="login-form" style="height:560px;">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <input asp-for="Name" class="form-control form-control-lg" placeholder="Name" aria-label="Username"
+                                           aria-describedby="basic-addon1" required />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                  
+                                    <input asp-for="Surname" class="form-control form-control-lg" placeholder="Surname" aria-label="Username"
+                                           aria-describedby="basic-addon1" required />
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Username" class="form-control form-control-lg" placeholder="Username" aria-label="Username"
+                                           aria-describedby="basic-addon1" required />
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Email" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username"
+                                           aria-describedby="basic-addon1" required />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="Password" class="form-control form-control-lg" placeholder="Password" aria-label="Password"
+                                           aria-describedby="basic-addon1" required />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="ConfirmPassword" class="form-control form-control-lg" placeholder=" Confirm Password" aria-label="Password"
+                                           aria-describedby="basic-addon1" required />
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="login-checkbox">
+                                    <label>
+                                        <input type="checkbox" name="aggree">Agree the terms and policy
+                                    </label>
+                                </div>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
+
+                            </form>
+                            <div class="form-group">
+                                <div class="p-t-20">
+                                    <a asp-controller="Home" asp-action="Index"><i class=" far fa-arrow-alt-circle-left"></i>  Go Back</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Jquery JS-->
+    <script src="~/admin/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="~/admin/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="~/admin/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="~/admin/vendor/slick/slick.min.js">
+    </script>
+    <script src="~/admin/vendor/wow/wow.min.js"></script>
+    <script src="~/admin/vendor/animsition/animsition.min.js"></script>
+    <script src="~/admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="~/admin/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/admin/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="~/admin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/admin/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/admin/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="~/admin/vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="~/admin/js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->

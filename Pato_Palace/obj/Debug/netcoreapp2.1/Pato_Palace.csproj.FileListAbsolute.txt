@@ -78,3 +78,4 @@ C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razo
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Areas\Pato_Palace_Admin\Views\Reservation\Create.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Areas\Pato_Palace_Admin\Views\Reservation\Delete.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Areas\Pato_Palace_Admin\Views\Reservation\Update.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs

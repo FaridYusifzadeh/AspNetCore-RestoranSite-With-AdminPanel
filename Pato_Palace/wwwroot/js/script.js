@@ -26,7 +26,7 @@ $(document).ready(function () {
       $("#header_navs #src_head ").css("background-color", "white");
       $("#header_navs  ").css("background-color", "rgba(136,136,136,0.6)");
       $("#header_navs  ").css("box-shadow", "0px 23px 34px -12px black");
-      // $(".nav-link").addClass("red");
+     
 
 
     } else {
@@ -37,7 +37,7 @@ $(document).ready(function () {
       $("#header_navs #src_head ").css("background-color", "#C4C2BE");
       $("#header_navs  ").css("height", "");
       $("#header_navs  ").css("box-shadow", "none");
-      // $(".nav-link").removeClass("red");
+    
     }
   })
   // <!-- <=================================================> -->

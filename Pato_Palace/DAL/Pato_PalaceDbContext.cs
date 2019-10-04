@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Pato_Palace.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pato_Palace.DAL
 {
-    public class Pato_PalaceDbContext:DbContext
+    public class Pato_PalaceDbContext: IdentityDbContext<AppUser>
     {
         public Pato_PalaceDbContext(DbContextOptions<Pato_PalaceDbContext> options):base(options)
         {

@@ -18,6 +18,16 @@ namespace Pato_Palace.Utilities
             }
             return false;
         }
+        public enum Roles
+        {
+            Admin,
+            Manager,
+            Member
+        }
+
+        public const string AdminRole = "Admin";
+        public const string ManagerRole = "Manager";
+        public const string MemberRole = "Member";
 
     }
 }
