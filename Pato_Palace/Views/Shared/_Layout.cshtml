@@ -98,27 +98,48 @@
                             </a>
 
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
-                                Login
-                            </a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
 
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register"  role="button" aria-haspopup="true" aria-expanded="false">
-                                Register
-                            </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
+                                    LogOut
+                                </a>
 
-                        </li>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-shopping-basket">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-shopping-basket">
 
-                                </i>
-                                <span class='badge badge-warning' id='lblCartCount'>0</span>
-                            </a>
-                        </li>
+                                    </i>
+                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Login
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Register
+                                </a>
+
+                            </li>
+                        }
+
+
+
 
                     </ul>
 
