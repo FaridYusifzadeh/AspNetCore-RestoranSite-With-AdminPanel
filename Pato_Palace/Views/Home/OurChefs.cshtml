@@ -1,0 +1,413 @@
+﻿@model HomeModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chefs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="carousel/docs/assets/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower|Nanum+Gothic" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <!-- header starts -->
+    <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <a class="navbar-brand" href="Index.html">
+                    <img src="~/Images/logo/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Menu">Menu</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="OurChefs">Our Chef</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Events">Events</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Reservation
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Gallery
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Blog
+                            </a>
+
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+
+
+                                </div>
+                            </li>
+                        }
+                        <li class="nav-item ">
+                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Contact Us
+                            </a>
+
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
+                                    LogOut
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-shopping-basket">
+
+                                    </i>
+                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Login
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Register
+                                </a>
+
+                            </li>
+                        }
+
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-12 header-text">
+                    <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 6rem;">Chefs</h2>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </header>
+    <!-- header ends -->
+    <!-- top scroll -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12  d-flex align-items-end flex-column" style="background:transparent;">
+                <span id="myBtn" title="Go to top"></span>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- top scroll -->
+
+    <section class="chef mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div class="container ">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <h1 style="    color: #232323;font-size: 32px;font-weight: 700;letter-spacing: 1px;margin-bottom: 5px;z-index: 11;text-transform: uppercase;">
+                                    THOMAS ANDERSON
+                                </h1>
+                                <p style="    position: relative;color: #232323;font-size: 16px;font-weight: 400;margin-bottom: 35px;z-index: 11;text-transform: capitalize;">
+                                    Executif Chef
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p style="position: relative;color: #616060;font-size: 15px;line-height: 1.7em;margin-bottom: 40px;z-index: 11;">
+                                    Unique experience for the Holidays at Monde. Proin nibhel velit auctor aliquet. Aenean sollicit
+                                    udine oremuisal biben dum auctor, nisi elit consequat ipsum, nec sagittis am sem nibhad
+                                    elit. Duis sed odio sit amet nibvupususa amet uris. Morbi accumsan ipsum vitamectellus
+                                    bodio tincwa idunt auctor a ornare odio.
+                                </p>
+                            </div>
+                            <div class="col-12 mb-5">
+                                <a href="" style="    position: relative;color: #8b755a;font-size: 12px;font-weight: 700;letter-spacing: 1px;padding-bottom: 1px;display: inline-block;text-transform: uppercase;border-bottom: 2px solid #8b755a;">CREATIONS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="col-12 chef-image">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel starts -->
+    <section class="quote-carousel">
+        <div class="container">
+            <div class="row" style="margin-top:100px;">
+                <div class="col-lg-8 mx-auto text-center">
+
+                    <div class="owl-carousel">
+                        <div>
+                            <p class="d-block w-100" style="position: relative;color: #232323;font-size: 20px;line-height: 1.8em;margin-bottom: 30px;font-family: 'Conv_georgia';">
+                                “An experience at the heart of the New York, that give you all
+                                <br> the magic that you can imagin. Curab euismod elit ipsum, eu
+                                <br> pellen tesque turpis commodo sit amet.
+                            </p>
+                            <p class="mt-5" style="font-size:15px;font-weight:bold;">Kaka Leite</p>
+                        </div>
+                        <div>
+                            <p class="d-block w-100" style="position: relative;color: #232323;font-size: 20px;line-height: 1.8em;margin-bottom: 30px;font-family: 'Conv_georgia';">
+                                “An experience at the heart of the New York, that give you all
+                                <br> the magic that you can imagin. Curab euismod elit ipsum, eu
+                                <br> pellen tesque turpis commodo sit amet.
+                            </p>
+                            <p class="mt-5" style="font-size:15px;font-weight:bold;">Isco Alarcon</p>
+
+                        </div>
+                        <div>
+                            <p class="d-block w-100" style="position: relative;color: #232323;font-size: 20px;line-height: 1.8em;margin-bottom: 30px;font-family: 'Conv_georgia';">
+                                “An experience at the heart of the New York, that give you all
+                                <br> the magic that you can imagin. Curab euismod elit ipsum, eu
+                                <br> pellen tesque turpis commodo sit amet.
+                            </p>
+                            <p class="mt-5" style="font-size:15px;font-weight:bold;">Andreas Iniesta</p>
+
+                        </div>
+                        <div>
+                            <p class="d-block w-100" style="position: relative;color: #232323;font-size: 20px;line-height: 1.8em;margin-bottom: 30px;font-family: 'Conv_georgia';">
+                                “An experience at the heart of the New York, that give you all
+                                <br> the magic that you can imagin. Curab euismod elit ipsum, eu
+                                <br> pellen tesque turpis commodo sit amet.
+                            </p>
+                            <p class="mt-5" style="font-size:15px;font-weight:bold;">Thiago Alcantara</p>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Carousel ends -->
+    <!-- Chef Starts -->
+    <section class="master-chef" style="margin-top:70px;margin-bottom:270px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 background">
+                    <div class="row bg-light d-flex align-items-center" style="margin:70px 60px;">
+                        <div class="col-lg-6 ">
+                            <div class="col-12 text-center mt-4">
+                                <a href="">
+                                    <h3 style="font-size: 18px;font-weight: 700;letter-spacing: 1px;text-transform: up;    color: #8b755a;">
+                                        THOMAS ANDERSON
+                                    </h3>
+                                </a>
+                                <p class="mt-1"> Chef</p>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p style=" padding:0px 25px;font-weight:bold;   color: #616060;font-size: 14px;font-style: italic;margin-top: 15px;font-family: 'Conv_georgia';color: black;">
+                                    "Every day brings more pleasure and sense of marvel. When New York city waking up and going
+                                    to sleep is simply magical."
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 ">
+                            <img src="http://monde.elitelayers.com/html/images/resource/chef-1.jpg" alt="">
+                        </div>
+
+
+                    </div>
+
+                    <div class="row bg-light d-flex align-items-center" style="margin:70px 60px;">
+                        <div class="col-lg-6 ">
+
+                            <img src="http://monde.elitelayers.com/html/images/resource/chef-1.jpg" alt="">
+
+
+                        </div>
+                        <div class="col-lg-6 ">
+                            <div class="col-12 text-center mt-4">
+                                <a href="">
+                                    <h3 style="font-size: 18px;font-weight: 700;letter-spacing: 1px;text-transform: up;    color: #8b755a;">
+                                        THOMAS ANDERSON
+                                    </h3>
+                                </a>
+                                <p class="mt-1"> Chef</p>
+                            </div>
+                            <div class="col-12 text-center">
+                                <p style=" padding:0px 25px;font-weight:bold;   color: #616060;font-size: 14px;font-style: italic;margin-top: 15px;font-family: 'Conv_georgia';color: black;">
+                                    "Every day brings more pleasure and sense of marvel. When New York city waking up and going
+                                    to sleep is simply magical."
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Chef Ends -->
+    <!-- footer section -->
+
+    <footer style=" background-color: #171717;color:white;">
+        <div class="container">
+            <div style="margin-top:150px;" class="row text-center">
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 style="margin-top: 11px">Contact</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                +994-70-571-21-55
+                                <br> Old City - Asef Zeynalli street, Baku, Azerbaijan
+                                <br> fariddsx2015@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img style="margin-top: 11px;" src="~/Images/logo/logo2.png" alt="">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 style="margin-top: 11px">Hours</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                Every day
+                                <br> from Noon to 1:30 pm
+                                <br> and from 7 pm to 9:30 pm
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p class="mt-5" style="font-size:14px">
+                        <marquee behavior="" direction="">
+                            PatoPalace © Monde 2019. All Rights Reserved.
+                        </marquee>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="~/carousel/docs/assets/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/carousel/owl.carousel.min.js"></script>
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

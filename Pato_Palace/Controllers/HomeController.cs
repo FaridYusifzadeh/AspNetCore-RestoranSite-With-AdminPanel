@@ -32,5 +32,44 @@ namespace Pato_Palace.Controllers
             };
             return View(homeModel);
         }
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult OurChefs()
+        {
+            return View();
+        }
+        public ActionResult Events()
+        {
+            return View();
+        }
+        public ActionResult Locations()
+        {
+            return View();
+        }
+        public ActionResult Reservation()
+        {
+            return View();
+        }
+
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+        public ActionResult Blog()
+        {
+            return View();
+        }
+        public ActionResult ShopNow()
+        {
+            return View();
+        }
     }
 }

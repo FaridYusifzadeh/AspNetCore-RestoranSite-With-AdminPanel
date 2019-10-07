@@ -1,0 +1,578 @@
+﻿@model HomeModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower|Nanum+Gothic" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <!-- header starts -->
+    <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <a class="navbar-brand" href="Index.html">
+                    <img src="~/Images/logo/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Menu">Menu</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="OurChefs">Our Chef</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Events">Events</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Reservation
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Gallery
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Blog
+                            </a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+
+
+                                </div>
+                            </li>
+                        }
+                        <li class="nav-item ">
+                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Contact Us
+                            </a>
+
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
+                                    LogOut
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-shopping-basket">
+
+                                    </i>
+                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Login
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Register
+                                </a>
+
+                            </li>
+                        }
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-12 header-text">
+                    <h2 class="text-center" style="margin-top:170px; color: antiquewhite;font-size: 6rem;">Menu</h2>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </header>
+    <!-- header ends -->
+    <!-- top scroll -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12  d-flex align-items-end flex-column" style="background:transparent;">
+                <span id="myBtn" title="Go to top"></span>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- top scroll -->
+    <!-- section Menu starts -->
+    <section class="menu">
+        <div class="container">
+            <div class="row" style="margin-top:100px">
+                <div class="col-12 text-center">
+                    <h5 style="font-family: 'Dancing Script', cursive; font-size:1.5em ; color: #8b755a;">Always Delicious</h5>
+                </div>
+                <div class="col-12 text-center">
+                    <h1 style="font-weight: 700;    position: relative; color: #232323; font-size: 42px; font-weight: 700; line-height: 1.2em; padding-bottom: 35px; letter-spacing: 1px; text-transform: uppercase;">MAIN MENU</h1>
+                </div>
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Pastries </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Soupe Au Pistou </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Bouillabaisse </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> French Toast Croissant </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Rouge Vegetarian </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Poulet Baguette </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Risotto Vert </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Confit De Canard </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+
+                            </div>
+                            <div class="col-12 mt-5">
+                                <h5 class="d-inline">
+                                    <a href=""> Cromesouis </a>
+                                </h5>
+                                <h5 class="d-inline float-right"> $25</h5>
+                                <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <!-- section Menu ends -->
+    <!-- COCKTAIL CARD STARTS -->
+
+    <section class="COCKTAIL-CARD">
+        <div class="layout">
+            <div class="container">
+                <div class="row text-center mt-5">
+                    <div class="col-12 text-center mt-5">
+
+                        <h5 style="font-family: 'Dancing Script', cursive; font-size:1.5em ; color: #8b755a;">Exceptional</h5>
+                    </div>
+                    <div class="col-12">
+                        <h1 style="color:white;    font-size: 42px;font-weight: 700;line-height: 1.2em;padding-bottom: 35px;letter-spacing: 2px;text-transform: uppercase;">COCKTAIL CARD</h1>
+                    </div>
+
+                </div>
+                <div class="row mb-5">
+                    <div class="container">
+                        <div class="row mt-5">
+                            <div class="col-lg-4 col-md-12">
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> Le Bon Rouge</a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $15</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> Cointreau Fizz</a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $21</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> Fizz La Poire </a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $14</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> Cerise Fizz</a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $12</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> La Rose</a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $29</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> Mulled Wine </a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $9</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12">
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href=""> Rouge Mimosa</a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $17</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href="">Bloody Marry </a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $18</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <h5 class="d-inline">
+                                        <a href="">Marseille Mule </a>
+                                    </h5>
+                                    <h5 class="d-inline float-right"> $28</h5>
+                                    <h6 style="    position: relative;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">served warm and with walnut praline, crème </h6>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+    <!-- COCKTAIL CARD ENDS -->
+    <!-- THE TEAM STARTS -->
+    <section class="todays-special" style="margin-top:100px;">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h5 style="font-family: 'Dancing Script', cursive; font-size:25px ; color: #8b755a;">
+                        Magical Experience
+                    </h5>
+
+                </div>
+                <div class="col-12">
+                    <h1 class="" style="color: #232323;font-size: 42px;font-weight: 700;line-height: 1.2em;padding-bottom: 35px;letter-spacing: 1px;text-transform: uppercase;">
+                        THE TEAM
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img src="Images/product/RawVeganPizzaphoto-1528696353932-be229661fd48.jpg" alt="">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h5 class="d-inline">
+                            <a href=""> Raw Vegan Pizza </a>
+                        </h5>
+                        <h5 class="d-inline float-right"> $25</h5>
+                        <a href="">
+                            <h6 class="mb-5" style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </h6>
+                        </a>
+
+
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img src="Images/product/photo-1512621776951-a57141f2eefd.jpg" alt="">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h5 class="d-inline">
+                            <a href=""> Vegan salad bowl </a>
+                        </h5>
+                        <h5 class="d-inline float-right"> $18</h5>
+                        <a href="">
+                            <h6 class="mb-5" style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </h6>
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img src="Images/product/delicious-placephoto-1521845455419-eac340fdbbed.jpg" alt="">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h5 class="d-inline">
+                            <a href=""> Delicious </a>
+                        </h5>
+                        <h5 class="d-inline float-right"> $14</h5>
+                        <a href="">
+                            <h6 class="mb-5" style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </h6>
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img src="Images/product/potetophoto-1565310022152-79c62f598627.jpg" alt="">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h5 class="d-inline">
+                            <a href=""> Fried Potatoes</a>
+                        </h5>
+                        <h5 class="d-inline float-right"> $12.58</h5>
+                        <a href="">
+                            <h6 class="mb-5" style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </h6>
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img src="Images/product/delicotesphoto-1568667185514-18fea9dcf5c6.jpg" alt="">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h5 class="d-inline">
+                            <a href=""> Pica Pica Dish</a>
+                        </h5>
+                        <h5 class="d-inline float-right"> $23</h5>
+                        <a href="">
+                            <h6 class="mb-5" style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </h6>
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img src="Images/product/freshphoto-1481455473976-c280ae7c10f9.jpg" alt="">
+                    </div>
+                    <div class="col-12 mt-5">
+                        <h5 class="d-inline">
+                            <a href=""> Favourite Winter drink</a>
+                        </h5>
+                        <h5 class="d-inline float-right"> $15</h5>
+                        <a href="">
+                            <h6 class="mb-5" style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </h6>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- THE TEAM ENDS -->
+    <!-- footer section -->
+
+    <footer style=" background-color: #171717;color:white;">
+        <div class="container">
+            <div style="margin-top:150px;" class="row text-center">
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 style="margin-top: 11px;">Contact</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                +994-70-571-21-55
+                                <br> Old City - Asef Zeynalli street, Baku, Azerbaijan
+                                <br> fariddsx2015@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img style="margin-top: 11px;" src="~/Images/logo/logo2.png" alt="">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 style="margin-top: 11px;">Hours</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                Every day
+                                <br> from Noon to 1:30 pm
+                                <br> and from 7 pm to 9:30 pm
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <p class="mt-5" style="font-size:14px">
+                        <marquee behavior="" direction="">
+                            PatoPalace © Monde 2019. All Rights Reserved.
+                        </marquee>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

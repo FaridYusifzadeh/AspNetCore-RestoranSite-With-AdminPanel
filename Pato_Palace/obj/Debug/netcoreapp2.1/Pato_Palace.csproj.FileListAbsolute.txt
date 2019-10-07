@@ -80,3 +80,12 @@ C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.pdb
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.csproj.CopyComplete
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\AboutUs.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Menu.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\OurChefs.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Events.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Locations.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Reservation.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Gallery.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Blog.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShopNow.g.cshtml.cs

@@ -54,7 +54,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link " href="Index.html" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
                                 Home
                             </a>
 
@@ -65,29 +65,48 @@
                                 About Us
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="AboutUs.html">About Us</a>
-                                <a class="dropdown-item" href="Menu.html">Menu</a>
-                                <a class="dropdown-item" href="Chefs.html">Our Chef</a>
-                                <a class="dropdown-item" href="Events.html">Events</a>
-                                <a class="dropdown-item" href="Locations.html">Location</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Menu">Menu</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="OurChefs">Our Chef</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Events">Events</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " id="navigation" href="Reservation.html" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                               aria-expanded="false">
                                 Reservation
                             </a>
 
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="Gallery.html" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
+                               aria-expanded="false">
                                 Gallery
                             </a>
 
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+                                 
+
+                                </div>
+                            </li>
+                        }
+
+
 
                         <li class="nav-item ">
-                            <a class="nav-link " href="Blog.html" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
+                               aria-expanded="false">
                                 Blog
                             </a>
 
