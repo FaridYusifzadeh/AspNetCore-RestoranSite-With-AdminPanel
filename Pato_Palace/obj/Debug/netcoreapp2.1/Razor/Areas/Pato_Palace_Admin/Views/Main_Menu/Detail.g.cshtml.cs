@@ -75,7 +75,7 @@ using Pato_Palace.Models;
             WriteLiteral("</p>\r\n               \r\n\r\n            </div>\r\n        </div>\r\n        <div class=\"row mt-5\">\r\n            <div class=\"col-12\">\r\n                ");
             EndContext();
             BeginContext(429, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b66d124fea64bd19c4adf520a0e9310", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a90d1cb0611c4091af6ce09ee3cc8ca3", async() => {
                 BeginContext(451, 54, true);
                 WriteLiteral("<i class=\" far fa-arrow-alt-circle-left\"></i>  Go Back");
                 EndContext();

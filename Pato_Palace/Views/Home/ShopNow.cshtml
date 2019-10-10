@@ -82,7 +82,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
-                               
+
 
                             </div>
                         </li>
@@ -124,7 +124,7 @@
                                 </a>
                             </li>
                         }
-                       
+
 
 
                     </ul>
@@ -166,258 +166,56 @@
     <section class="also-like shop-now">
         <div class="container">
             <div class="row text-center" style="margin-top:100px;">
-                <div class="col-lg-4 mt-4">
+                
+                @foreach (var item in Model.ShopNowProducts)
 
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
+                {
+                    <div class="col-lg-4 mt-5">
+
+                        <div class="col-12" style="padding-left:0px;padding-right:0px;">
+                            <div class="layout">
+                                <button class="addBtn">
+                                    add to card
+                                </button>
+                            </div>
+                            <img src="~/Images/@item.Image" alt="">
+
                         </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/1.jpg" alt="">
+                        <div class="col-12 mt-3">
+                            <a href="">
+                                <h4>@item.Title</h4>
+                                <span>
+                                    $@item.Price
+                                </span>
+                                <p>
+                                    @item.Description
+                                </p>
+                            </a>
 
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>THE ROUGE BREAKFAST</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $25.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
                         </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/2.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>SOUPE AU PISTOU</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $35.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
+                        <div class="col-12 mt-3">
+                            <div class="row">
+                               
+                                <div class="col-6">
+                                    <div class="col-lg-7  text-center ">
+                                        <a asp-action="BuyNow" asp-route-id="@item.Id">
+                                            <button  style=" border: 2px solid #7A674F;  background: #7A674F; padding: 6px 37px;
+                                             line-height: 21px; margin-top:0%"
+                                                    class="addBtn">
+                                                BuyNow
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/3.jpg" alt="">
 
                     </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>CROMESQUIS</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $45.00
-                            </span>
-                        </a>
+                }
 
 
-                    </div>
+                
 
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
-                        </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/4.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>BISTRO</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $15.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
-                        </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/5.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>CHAMPIGNONS À L'AIL</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $55.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
-                        </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/6.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>SALMON RILLETTE</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $35.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
-                        </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/7.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>CAMEMBERT</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $25.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
-                        </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/8.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>FROMAGE BAGUETTE</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $15.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-                        <div class="layout">
-                            <button class="addBtn">
-                                add to card
-                            </button>
-                        </div>
-                        <img src="http://monde.elitelayers.com/html/images/resource/products/9.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>EGG MEURETTE</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <span>
-                                $30.00
-                            </span>
-                        </a>
-
-
-                    </div>
-
-                </div>
             </div>
         </div>
 
@@ -433,7 +231,7 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6>contact</h6>
+                            <h6>Contact</h6>
                         </div>
                         <div class="col-12">
                             <p>
@@ -458,7 +256,7 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6>hours</h6>
+                            <h6>Hours</h6>
                         </div>
                         <div class="col-12">
                             <p>
@@ -466,7 +264,7 @@
                                 <br> from Noon to 1:30 pm
                                 <br> and from 7 pm to 9:30 pm
                             </p> <br> and from 7 pm to 9:30 pm
-                            </p>
+                            
                         </div>
                     </div>
                 </div>
@@ -488,7 +286,7 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
             integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
             crossorigin="anonymous"></script>

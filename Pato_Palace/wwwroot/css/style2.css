@@ -395,11 +395,11 @@ header:before {
 .cart img{
     width: 100%;
 }
-.input-group>.form-control:not(:first-child) {
+.input-group > .form-control:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    padding: 26px;
-    width: 30px;
+    padding: 13px;
+   
 }
 .cart .col-12 .btn{
     margin-top: 10px;
@@ -568,20 +568,18 @@ font-size: 0.8em;
     /* display: block; */
 
 }
-.also-like .addBtn{
+.also-like .addBtn {
     position: relative;
-    padding: 13px 43px;
-    line-height: 24px;
+   
     color: #ffffff;
     text-align: center;
     font-size: 12px;
     font-weight: 700;
-    background: #8b755a;
+  
     letter-spacing: 2px;
     cursor: pointer;
-    border: 2px solid #8b755a;
+   
     text-transform: uppercase;
-    margin-top: 75%;
     /* display: none; */
 }
 .also-like .addBtn:hover {

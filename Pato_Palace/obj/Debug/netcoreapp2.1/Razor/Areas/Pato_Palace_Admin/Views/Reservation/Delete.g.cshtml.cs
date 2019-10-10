@@ -78,7 +78,7 @@ using Pato_Palace.Models;
             WriteLiteral("</p>\r\n\r\n            <p class=\"text-danger\">Are you sure delete this data?</p>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-12\">\r\n            ");
             EndContext();
             BeginContext(414, 120, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6353f3f4fc9d4ad186dc77793c79c7ca", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c953765f3ffa4e6b9862fe40552cd634", async() => {
                 BeginContext(434, 93, true);
                 WriteLiteral("\r\n                <input type=\"submit\" class=\"btn btn-danger\" value=\"Delete\" />\r\n            ");
                 EndContext();
@@ -102,7 +102,7 @@ using Pato_Palace.Models;
             WriteLiteral("\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-12\">\r\n            ");
             EndContext();
             BeginContext(629, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b36d3ba5c2c840498fc89370669462f7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd378597281e4295a7ce9820cc0b8fa1", async() => {
                 BeginContext(651, 42, true);
                 WriteLiteral("<i class=\" fas fa-arrow-left\"></i> Go Back");
                 EndContext();

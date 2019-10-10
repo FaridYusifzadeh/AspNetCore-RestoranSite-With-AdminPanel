@@ -24,7 +24,7 @@ namespace Pato_Palace.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
-
+            
         }
         public IActionResult Register()
         {

@@ -184,6 +184,27 @@ namespace Pato_Palace.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Pato_Palace.Models.Buscket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AppUserId");
+
+                    b.Property<string>("AppUsersId");
+
+                    b.Property<int?>("ShopNowProductId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUsersId");
+
+                    b.HasIndex("ShopNowProductId");
+
+                    b.ToTable("Busckets");
+                });
+
             modelBuilder.Entity("Pato_Palace.Models.Enjoy", b =>
                 {
                     b.Property<int>("Id")
@@ -362,6 +383,31 @@ namespace Pato_Palace.Migrations
                     b.ToTable("Rservation_Contents");
                 });
 
+            modelBuilder.Entity("Pato_Palace.Models.ShopNowProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasMaxLength(300);
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ShopNowProducts");
+                });
+
             modelBuilder.Entity("Pato_Palace.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -455,6 +501,17 @@ namespace Pato_Palace.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Pato_Palace.Models.Buscket", b =>
+                {
+                    b.HasOne("Pato_Palace.Models.AppUser", "AppUsers")
+                        .WithMany("Busckets")
+                        .HasForeignKey("AppUsersId");
+
+                    b.HasOne("Pato_Palace.Models.ShopNowProduct", "ShopNowProducts")
+                        .WithMany("Busckets")
+                        .HasForeignKey("ShopNowProductId");
                 });
 #pragma warning restore 612, 618
         }

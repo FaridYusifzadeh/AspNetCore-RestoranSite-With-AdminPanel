@@ -152,5 +152,30 @@ $(document).ready(function () {
   });
 
 
+    $('button').click(function () {
+        var $i = $(this);
+        $('#output').html(function (i, val) {
+            val = val * 1 + $i.data('inc');
+            return (val <= 0 ? '' : '+') + val;
+        });
+    });
+
+
 });
+
+var count = 1;
+var countEl = document.getElementById("count");
+function plus() {
+    count++;
+    countEl.value = count;
+}
+function minus() {
+    if (count > 1) {
+        count--;
+        countEl.value = count;
+    }
+}
+
+
+
 

@@ -1,0 +1,600 @@
+﻿@model  ShopNowProduct
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower|Nanum+Gothic" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <!-- header starts -->
+    <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="Home.html">
+                    <img src="~/Images/logo/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Menu">Menu</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="OurChefs">Our Chef</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Events">Events</a>
+                                <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Reservation
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Gallery
+                            </a>
+
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+
+
+                            </div>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Blog
+                            </a>
+
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                Contact Us
+                            </a>
+
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
+                                    LogOut
+                                </a>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-shopping-basket">
+
+                                    </i>
+                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+
+                </div>
+            </nav>
+
+
+
+
+            <div class="row">
+                <div class="col-12 header-text">
+                    <h2 class="text-center" style="margin-top:130px;color: wheat;font-size: 6rem">Shop</h2>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </header>
+    <!-- header ends -->
+    <!-- top scroll -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12  d-flex align-items-end flex-column" style="background:transparent;">
+                <span id="myBtn" title="Go to top"></span>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- top scroll -->
+    <!-- Cart starts -->
+
+    <section class="cart">
+        <div class="container">
+            <div class="row" style="margin-top:150px;">
+
+                <div class="col-lg-6">
+                    <!-- modal part -->
+                    <!-- Button trigger modal -->
+                    <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
+
+                        <img src="~/Images/@Model.Image" alt="">
+                    </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <img src="~/Images/@Model.Image" alt="">
+                                </div>
+                                <div class="modal-footer">
+                                    <i data-dismiss="modal" class="far fa-times-circle"></i>
+                                    <!-- <button   >Close</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal part -->
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="col-12 productName">
+                        <h4>
+                          @Model.Title
+                        </h4>
+                    </div>
+                    <div class="col-12 productPrice">
+                        <span>$@Model.Price</span>
+                    </div>
+                    <div class="col-12 productInfo mt-5">
+                        <p>
+                           @Model.Description
+                        </p>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <div class="row">
+                            <div class="col-lg-5  mt-4 text-center">
+                                <div class="input-group  number-spinner ">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-dir="dwn" value="-" id="moins" onclick="minus()">
+                                            <i class="fas fa-minus" ></i>
+                                        </button>
+                                    </span>
+                                    <input type="text" id="count" class="form-control text-center" value="1" style="padding: 29px;">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" data-dir="up" value="+" id="plus" onclick="plus()">
+                                            <i class="fas fa-plus" ></i>
+                                        </button>
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-7 mt-4 text-center ">
+                                <button class="addBtn">
+                                    add to card
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-12 mt-5 items">
+                        Weight:
+                        <span>340 gr</span>
+                    </div>
+                    <div class="col-12 mt-2 items">
+                        Category:
+                        <span>Soup</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- description -->
+            <div class="row" style="margin-top:60px;">
+                <div class="col-12">
+                    <button class="btnContent active">DESCRIPTION</button>
+                    <button class="btnReview" style="margin-left:30px;">
+                        REVIEWS (
+                        <span>5</span> )
+                    </button>
+
+
+                </div>
+                <div class="col-12 mt-5 content">
+                    <p>
+                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
+                        elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                        Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor
+                        eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                        Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque
+                        elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum
+                        feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                        <hr class="mt-5">
+
+                    </p>
+                </div>
+                <div class="col-12 mt-5 comment">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>
+                                <span>5</span>&nbsp; Reviews Found
+                            </h4>
+                        </div>
+                        <div class="col-2 mt-4">
+                            <img src="http://monde.elitelayers.com/html/images/resource/author-1.jpg" alt="">
+                        </div>
+                        <div class="col-10 mt-4 rev-content" style="">
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-info">
+                                    Admin – April 03, 2017:
+                                </div>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-text">
+                                    <p>
+                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                        sociis natoque penatibus et magnis dis
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-2 mt-4">
+                            <img src="http://monde.elitelayers.com/html/images/resource/author-5.jpg" alt="">
+                        </div>
+                        <div class="col-10 mt-4 rev-content" style="">
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-info">
+                                    Mark – January 01, 2017:
+
+                                </div>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-text">
+                                    <p>
+                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                        sociis natoque penatibus et magnis dis
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-2 mt-4">
+                            <img src="http://monde.elitelayers.com/html/images/resource/author-2.jpg" alt="">
+                        </div>
+                        <div class="col-10 mt-4 rev-content" style="">
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-info">
+                                    George – June 03, 2017:
+
+                                </div>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-text">
+                                    <p>
+                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                        sociis natoque penatibus et magnis dis
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-2 mt-4">
+                            <img src="http://monde.elitelayers.com/html/images/resource/author-3.jpg" alt="">
+                        </div>
+                        <div class="col-10 mt-4 rev-content" style="">
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-info">
+                                    Erbil – August 01, 2017:
+
+                                </div>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-text">
+                                    <p>
+                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                        sociis natoque penatibus et magnis dis
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-2 mt-4">
+                            <img src="http://monde.elitelayers.com/html/images/resource/author-4.jpg" alt="">
+                        </div>
+                        <div class="col-10 mt-4 rev-content" style="">
+                            <div class="rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-info">
+                                    Sheraz – December 01, 2017:
+
+                                </div>
+                            </div>
+                            <div class="col-11 mt-3">
+                                <div class="rev-text">
+                                    <p>
+                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                        sociis natoque penatibus et magnis dis
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <div class="row add-review" style="margin-top:75px;">
+                        <div class="col-12">
+
+                        </div>
+                        <div class="col-12">
+                            <!-- FORM -->
+                            
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Name*</label>
+                                        <input type="text" class="form-control" id="inputName" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email*</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="">
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="website">Website</label>
+                                        <input type="text" class="form-control" id="website" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label style="padding-left:15px;" for="rating">Rating</label>
+                                        <div class="col-12">
+                                            <div class="users-rating">
+
+                                                <span class="fa fa-star"></span>
+                                                &nbsp;
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                &nbsp;
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                &nbsp;
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                &nbsp;
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Your Review</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+
+                                <button class="addBtn">
+                                    add review
+                                </button>
+                        </div>
+                      
+                        <!-- FORM -->
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <!-- Cart ends -->
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        var btnDescription = document.querySelector(".btnContent");
+        var btnReview = document.querySelector(".btnReview");
+        var content = document.querySelector(".content");
+        var comment = document.querySelector(".comment");
+        var active = document.querySelector(".active");
+
+
+        btnReview.addEventListener("click", function () {
+            btnDescription.classList.remove("active");
+            btnReview.classList.add("active");
+            content.style.display = "none";
+            comment.style.display = "block";
+        })
+        btnDescription.addEventListener("click", function () {
+            btnReview.classList.remove("active");
+            btnDescription.classList.add("active");
+            content.style.display = "block";
+            comment.style.display = "none";
+        })
+    </script>
+
+    <!-- footer section -->
+
+    <footer style=" background-color: #171717;color:white;">
+        <div class="container">
+            <div style="margin-top:150px;" class="row text-center">
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Contact</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                +994-70-571-21-55
+                                <br> Old City - Asef Zeynalli street, Baku, Azerbaijan
+                                <br> fariddsx2015@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="col-12">
+                        <img style="margin-top: 11px;" src="~/Images/logo/logo2.png" alt="">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <h6>Hours</h6>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                Every day
+                                <br> from Noon to 1:30 pm
+                                <br> and from 7 pm to 9:30 pm
+                            </p> <br> and from 7 pm to 9:30 pm
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <marquee behavior="" direction="">
+                        PatoPalace © Monde 2019. All Rights Reserved.
+                    </marquee>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

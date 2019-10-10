@@ -58,7 +58,7 @@ using Pato_Palace.Models;
             WriteLiteral("\r\n    <div class=\"container-fluid\" style=\"margin-top:110px;\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-12\">\r\n\r\n\r\n                ");
             EndContext();
             BeginContext(216, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b7acd63bf2ed4b2f992e6a6e22f1dba4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a155f2f88f324d56987e7c39dbc7c094", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -105,7 +105,7 @@ AddHtmlAttributeValue("", 253, Model.Image, 253, 12, false);
             WriteLiteral("</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-12\">\r\n                ");
             EndContext();
             BeginContext(503, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b553d3bf056b49feb5fb9f7bedae5860", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e2eed276115d41378ff4213b85cc5544", async() => {
                 BeginContext(525, 54, true);
                 WriteLiteral("<i class=\" far fa-arrow-alt-circle-left\"></i>  Go Back");
                 EndContext();
