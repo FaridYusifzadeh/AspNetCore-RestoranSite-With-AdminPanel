@@ -10,11 +10,12 @@ namespace Pato_Palace.Models
     {
         public int Id { get; set; }
 
-        public int? AppUserId { get; set; }
+        public string AppUserId { get; set; }
         public AppUser AppUsers { get; set; }
 
         public int? ShopNowProductId { get; set; }
         public ShopNowProduct ShopNowProducts { get; set; }
+        public int CountProduct { get; set; }
 
 
     }

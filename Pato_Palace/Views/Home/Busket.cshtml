@@ -10,17 +10,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Story</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-          crossorigin="anonymous">
+    <title>Basket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <link rel="stylesheet" href="~/css/style.css">
     <link rel="stylesheet" href="~/css/style2.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito|ZCOOL+XiaoWei" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Indie+Flower|Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Akronim|Indie+Flower" rel="stylesheet">
 
 
 
@@ -30,17 +31,19 @@
     <!-- header starts -->
     <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-                <a class="navbar-brand" href="Index.html">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="Home.html">
                     <img src="~/Images/logo/logo.png" alt="">
                 </a>
-                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
+
                         <li class="nav-item">
                             <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
                                 Home
@@ -48,9 +51,10 @@
 
                         </li>
 
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About Us
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -76,7 +80,17 @@
                             </a>
 
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
 
+
+                            </div>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -84,22 +98,8 @@
                             </a>
 
                         </li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Shop
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
-
-
-                                </div>
-                            </li>
-                        }
                         <li class="nav-item ">
-                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
+                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true"
                                aria-expanded="false">
                                 Contact Us
                             </a>
@@ -129,21 +129,6 @@
                                 </a>
                             </li>
                         }
-                        else
-                        {
-                            <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Login
-                                </a>
-
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Register
-                                </a>
-
-                            </li>
-                        }
 
                     </ul>
 
@@ -152,7 +137,7 @@
 
             <div class="row">
                 <div class="col-12 header-text">
-                    <h2 class="text-center" style="margin-top:170px;color: wheat;font-size: 6rem;">Story</h2>
+                    <h2 class="text-center"style="margin-top:130px;color: wheat;font-size: 6rem">Busket</h2>
 
                 </div>
             </div>
@@ -176,60 +161,68 @@
     </div>
     <!-- top scroll -->
 
-    <section class="gallery">
+    <div id="basket">
         <div class="container">
-            <div class="row" style="margin-top:70px;">
-                <div class="col-lg-3 col-md-12 col-xs-12">
-                    <h1>Task</h1>
-                </div>
-                <div class="col-lg-9 col-md-12 col-xs-12">
-                    <p>
-                        Aenean sollicitudin, lorem quis bibendum aucsim elit consuat ipsum, nec sagittis nibhid elit. Duis sed
-                        odio  sit amet nibh vulput ate sus a sit amet mauris. Morbi accumsa ipsum velit. Namec lus adio tincid
-                        ant  auctor a ornare odioed nauris vitae era.
-                    </p>
-                </div>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12  mx-auto mt-5 mb-5">
+                    <div class="list-group">
 
-                <div class="col-12">
-                    <img src="http://monde.elitelayers.com/html/images/resource/story-5.jpg" alt="">
-                </div>
-            </div>
-            <div class="row" style="margin-top:70px;">
-                <div class="col-lg-3 col-md-12 col-xs-12">
-                    <h1>
-                        CHALLENGE
-                    </h1>
-                </div>
-                <div class="col-lg-9 col-md-12 col-xs-12">
-                    <p>
-                        Aenean sollicitudin, lorem quis bibendum aucsim elit consuat ipsum, nec sagittis nibhid elit. Duis sed
-                        odio  sit amet nibh vulput ate sus a sit amet mauris. Morbi accumsa ipsum velit. Namec lus adio tincid
-                        ant  auctor a ornare odioed nauris vitae era.
-                    </p>
-                </div>
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between  align-items-center">
+                                <img src="~/Images/9.jpg" alt="">
+                                <h6>
+                                    flat-lay photography of vegetable soup <span class="ml-3">$31.00</span>
 
-                <div class="col-12">
-                    <img src="http://monde.elitelayers.com/html/images/resource/story-6.jpg" alt="">
-                </div>
-            </div>
-            <div class="row" style="margin-top:70px;">
-                <div class="col-lg-3 col-md-12 col-xs-12">
-                    <h1>
-                        SOLUTION
-                    </h1>
-                </div>
-                <div class="col-lg-9 col-md-12 col-xs-12">
-                    <p>
-                        Aenean sollicitudin, lorem quis bibendum aucsim elit consuat ipsum, nec sagittis nibhid elit. Duis sed
-                        odio  sit amet nibh vulput ate sus a sit amet mauris. Morbi accumsa ipsum velit. Namec lus adio tincid
-                        ant  auctor a ornare odioed nauris vitae era.
-                    </p>
-                </div>
+                                </h6>
+                                <small>
+                                    <i id="minusCount" title="Remove" class="far fa-times-circle"></i>
+                                </small>
 
+
+                            </div>
+
+                        </a>
+
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between  align-items-center">
+                                <img src="~/Images/3.jpg" alt="">
+                                <h6>
+                                    bistro <span class="ml-3">$25.00</span>
+
+                                </h6>
+                                <small>
+                                    <i title="Remove" class="far fa-times-circle"></i>
+                                </small>
+
+
+                            </div>
+
+                        </a>
+
+                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between  align-items-center">
+                                <img src="~/Images/13.jpg" alt="">
+                                <h6>
+                                    cooked sausages <span class="ml-3">$30.00</span>
+
+                                </h6>
+                                <small>
+                                    <i title="Remove" class="far fa-times-circle"></i>
+                                </small>
+
+
+                            </div>
+
+                        </a>
+                        <button type="button" class="btn btn-primary mt-4" onclick="RemoveCount()">Checkout</button>
+
+                    </div>
+
+                </div>
 
             </div>
         </div>
-    </section>
+    </div>
 
 
     <!-- footer section -->
@@ -240,20 +233,20 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6 style="margin-top: 11px">Contact</h6>
+                            <h6>contact</h6>
                         </div>
                         <div class="col-12">
                             <p>
-                                +994-70-571-21-55
-                                <br> Old City - Asef Zeynalli street, Baku, Azerbaijan
-                                <br> fariddsx2015@gmail.com
+                                765 - 879 - 1077
+                                <br> 55 Angelica Street, NY
+                                <br> info@monde.com
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="col-12">
-                        <img style="margin-top: 11px;" src="~/Images/logo/logo2.png" alt="">
+                        <img src="~/Images/logo/logo2.png" alt="">
                     </div>
                     <div class="col-12 mt-3">
                         <i class="fab fa-instagram"></i>
@@ -265,7 +258,7 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6 style="margin-top: 11px">Hours</h6>
+                            <h6>hours</h6>
                         </div>
                         <div class="col-12">
                             <p>
@@ -278,9 +271,7 @@
                 </div>
                 <div class="col-12">
                     <p class="mt-5" style="font-size:14px">
-                        <marquee behavior="" direction="">
-                            PatoPalace © Monde 2019. All Rights Reserved.
-                        </marquee>
+                        Copyright © Monde 2017. All Rights Reserved.
                     </p>
                 </div>
             </div>
@@ -296,13 +287,14 @@
 
 
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
-            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-            crossorigin="anonymous"></script>
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 
     <script src="~/js/script.js"></script>

@@ -94,7 +94,7 @@
 
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true"
+                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
                                aria-expanded="false">
                                 Contact Us
                             </a>
@@ -114,9 +114,8 @@
                                 </a>
 
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
@@ -198,13 +197,14 @@
                                
                                 <div class="col-6">
                                     <div class="col-lg-7  text-center ">
-                                        <a asp-action="BuyNow" asp-route-id="@item.Id">
-                                            <button  style=" border: 2px solid #7A674F;  background: #7A674F; padding: 6px 37px;
-                                             line-height: 21px; margin-top:0%"
-                                                    class="addBtn">
-                                                BuyNow
-                                            </button>
-                                        </a>
+                                       <a asp-action="BuyNow" asp-route-id="@item.Id">
+                                        <button   style=" border: 2px solid #7A674F;  background: #7A674F; padding: 6px 37px;
+         line-height: 21px; margin-top:0%"
+                class="addBtn">
+            BuyNow
+        </button>
+                                           </a>
+
                                     </div>
                                 </div>
                             </div>

@@ -97,7 +97,7 @@
 
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true"
+                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
                                aria-expanded="false">
                                 Contact Us
                             </a>
@@ -119,11 +119,12 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button"  aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+
+                                <span class='badge badge-warning' id='lblCartCount'>0</span>
                                 </a>
                             </li>
                         }
@@ -162,277 +163,280 @@
     </div>
     <!-- top scroll -->
     <!-- Cart starts -->
-
+    
     <section class="cart">
-        <div class="container">
-            <div class="row" style="margin-top:150px;">
+        
+            <div class="container">
+                <div class="row" style="margin-top:150px;">
 
-                <div class="col-lg-6">
-                    <!-- modal part -->
-                    <!-- Button trigger modal -->
-                    <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
+                    <div class="col-lg-6">
+                        <!-- modal part -->
+                        <!-- Button trigger modal -->
+                        <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
 
-                        <img src="~/Images/@Model.Image" alt="">
-                    </a>
+                            <img src="~/Images/@Model.Image" alt="">
+                        </a>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
 
-                                <div class="modal-body">
-                                    <img src="~/Images/@Model.Image" alt="">
-                                </div>
-                                <div class="modal-footer">
-                                    <i data-dismiss="modal" class="far fa-times-circle"></i>
-                                    <!-- <button   >Close</button> -->
+                                    <div class="modal-body">
+                                        <img src="~/Images/@Model.Image" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <i data-dismiss="modal" class="far fa-times-circle"></i>
+                                        <!-- <button   >Close</button> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- modal part -->
-
-                </div>
-                <div class="col-lg-6">
-                    <div class="col-12 productName">
-                        <h4>
-                          @Model.Title
-                        </h4>
-                    </div>
-                    <div class="col-12 productPrice">
-                        <span>$@Model.Price</span>
-                    </div>
-                    <div class="col-12 productInfo mt-5">
-                        <p>
-                           @Model.Description
-                        </p>
-                    </div>
-                    <div class="col-12 mt-4">
-                        <div class="row">
-                            <div class="col-lg-5  mt-4 text-center">
-                                <div class="input-group  number-spinner ">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" data-dir="dwn" value="-" id="moins" onclick="minus()">
-                                            <i class="fas fa-minus" ></i>
-                                        </button>
-                                    </span>
-                                    <input type="text" id="count" class="form-control text-center" value="1" style="padding: 29px;">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" data-dir="up" value="+" id="plus" onclick="plus()">
-                                            <i class="fas fa-plus" ></i>
-                                        </button>
-                                    </span>
-                                </div>
-
-                            </div>
-                            <div class="col-lg-7 mt-4 text-center ">
-                                <button class="addBtn">
-                                    add to card
-                                </button>
-                            </div>
-                        </div>
-
+                        <!-- modal part -->
 
                     </div>
-                    <div class="col-12 mt-5 items">
-                        Weight:
-                        <span>340 gr</span>
-                    </div>
-                    <div class="col-12 mt-2 items">
-                        Category:
-                        <span>Soup</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- description -->
-            <div class="row" style="margin-top:60px;">
-                <div class="col-12">
-                    <button class="btnContent active">DESCRIPTION</button>
-                    <button class="btnReview" style="margin-left:30px;">
-                        REVIEWS (
-                        <span>5</span> )
-                    </button>
-
-
-                </div>
-                <div class="col-12 mt-5 content">
-                    <p>
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
-                        elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-                        Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor
-                        eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                        Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque
-                        elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum
-                        feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
-                        <hr class="mt-5">
-
-                    </p>
-                </div>
-                <div class="col-12 mt-5 comment">
-                    <div class="row">
-                        <div class="col-12">
+                    <div class="col-lg-6">
+                        <div class="col-12 productName">
                             <h4>
-                                <span>5</span>&nbsp; Reviews Found
+                                @Model.Title
                             </h4>
                         </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-1.jpg" alt="">
+                        <div class="col-12 productPrice">
+                            <span>$@Model.Price</span>
                         </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Admin – April 03, 2017:
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
+                        <div class="col-12 productInfo mt-5">
+                            <p name="description">
+                                @Model.Description
+                            </p>
                         </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-5.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Mark – January 01, 2017:
+                        <div class="col-12 mt-4">
+                            <div class="row">
+                                <div class="col-lg-5  mt-4 text-center">
+                                    <div class="input-group  number-spinner ">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" data-dir="dwn" value="-" id="moins" onclick="minus()">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="count" class="form-control text-center" value="1" style="padding: 29px;">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" data-dir="up" value="+" id="plus" onclick="plus()">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </span>
+                                    </div>
 
                                 </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
+                                <div class="col-lg-7 mt-4 text-center ">
+                                    
+                                        <button type="submit" id="addToCard" class="addBtn" value="+" onclick=" pluscount()">
+                                            add to card
+                                        </button>
+                                    
                                 </div>
-                            </div>
-
+                            </div> 
 
 
                         </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-2.jpg" alt="">
+                        <div class="col-12 mt-5 items">
+                            Weight:
+                            <span>340 gr</span>
                         </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    George – June 03, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-3.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Erbil – August 01, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-4.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Sheraz – December 01, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
+                        <div class="col-12 mt-2 items">
+                            Category:
+                            <span>Soup</span>
                         </div>
                     </div>
-                    <div class="row add-review" style="margin-top:75px;">
-                        <div class="col-12">
+                </div>
 
+                <!-- description -->
+                <div class="row" style="margin-top:60px;">
+                    <div class="col-12">
+                        <button class="btnContent active">DESCRIPTION</button>
+                        <button class="btnReview" style="margin-left:30px;">
+                            REVIEWS (
+                            <span>5</span> )
+                        </button>
+
+
+                    </div>
+                    <div class="col-12 mt-5 content">
+                        <p>
+                            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
+                            elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                            Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor
+                            eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                            Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque
+                            elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum
+                            feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                            <hr class="mt-5">
+
+                        </p>
+                    </div>
+                    <div class="col-12 mt-5 comment">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>
+                                    <span>5</span>&nbsp; Reviews Found
+                                </h4>
+                            </div>
+                            <div class="col-2 mt-4">
+                                <img src="http://monde.elitelayers.com/html/images/resource/author-1.jpg" alt="">
+                            </div>
+                            <div class="col-10 mt-4 rev-content" style="">
+                                <div class="rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-info">
+                                        Admin – April 03, 2017:
+                                    </div>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                            sociis natoque penatibus et magnis dis
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-2 mt-4">
+                                <img src="http://monde.elitelayers.com/html/images/resource/author-5.jpg" alt="">
+                            </div>
+                            <div class="col-10 mt-4 rev-content" style="">
+                                <div class="rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-info">
+                                        Mark – January 01, 2017:
+
+                                    </div>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                            sociis natoque penatibus et magnis dis
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-2 mt-4">
+                                <img src="http://monde.elitelayers.com/html/images/resource/author-2.jpg" alt="">
+                            </div>
+                            <div class="col-10 mt-4 rev-content" style="">
+                                <div class="rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-info">
+                                        George – June 03, 2017:
+
+                                    </div>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                            sociis natoque penatibus et magnis dis
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-2 mt-4">
+                                <img src="http://monde.elitelayers.com/html/images/resource/author-3.jpg" alt="">
+                            </div>
+                            <div class="col-10 mt-4 rev-content" style="">
+                                <div class="rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-info">
+                                        Erbil – August 01, 2017:
+
+                                    </div>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                            sociis natoque penatibus et magnis dis
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-2 mt-4">
+                                <img src="http://monde.elitelayers.com/html/images/resource/author-4.jpg" alt="">
+                            </div>
+                            <div class="col-10 mt-4 rev-content" style="">
+                                <div class="rating">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-info">
+                                        Sheraz – December 01, 2017:
+
+                                    </div>
+                                </div>
+                                <div class="col-11 mt-3">
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                            sociis natoque penatibus et magnis dis
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
                         </div>
-                        <div class="col-12">
-                            <!-- FORM -->
-                            
+                        <div class="row add-review" style="margin-top:75px;">
+                            <div class="col-12">
+
+                            </div>
+                            <div class="col-12">
+                                <!-- FORM -->
+
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputPassword4">Name*</label>
@@ -487,16 +491,16 @@
                                 <button class="addBtn">
                                     add review
                                 </button>
+                            </div>
+
+                            <!-- FORM -->
                         </div>
-                      
-                        <!-- FORM -->
+
                     </div>
-
                 </div>
-            </div>
 
-        </div>
-        </div>
+            </div>
+     
     </section>
 
     <!-- Cart ends -->

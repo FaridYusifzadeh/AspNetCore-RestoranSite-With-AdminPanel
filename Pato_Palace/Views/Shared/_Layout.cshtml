@@ -112,7 +112,7 @@
 
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="ContactUs.html" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true" aria-expanded="false">
                                 Contact Us
                             </a>
 
@@ -126,14 +126,14 @@
 
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a id="LogoutSite" class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
                                     LogOut
                                 </a>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="Basket.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>

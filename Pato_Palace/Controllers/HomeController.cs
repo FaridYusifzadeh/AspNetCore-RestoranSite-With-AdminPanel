@@ -79,11 +79,18 @@ namespace Pato_Palace.Controllers
         {
             return View();
         }
+
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
         public IActionResult ShopNow  ()
         {
             
             return View(homeModel);
         }
+
+        
 
         public async Task<IActionResult> BuyNow(int? id)
         {
@@ -97,5 +104,32 @@ namespace Pato_Palace.Controllers
 
             return NotFound();
         }
+
+        [HttpGet]
+        public  IActionResult Busket()
+        {
+           
+            return View(homeModel);
+        }
+
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public IActionResult Busket(string a)
+        {
+            //if (user == null) return NotFound();
+            //ShopNowProduct prod = await _context.ShopNowProducts.FindAsync(id);
+            //AppUser user = await _context.Users.FindAsync(User.Identity.Name);
+            //Buscket b = new Buscket
+            //{
+            //    CountProduct = countproduct,
+            //    ShopNowProductId = prod.Id,
+            //    AppUserId = user.Id
+            ////};
+            //var buscket = await _context.Busckets.AddAsync(b);
+            //_context.SaveChanges();
+            return View();
+        }
+
     }
 }

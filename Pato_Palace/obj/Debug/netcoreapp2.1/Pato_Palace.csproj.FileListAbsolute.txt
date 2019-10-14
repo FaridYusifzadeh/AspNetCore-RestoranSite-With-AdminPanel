@@ -5,6 +5,7 @@ C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\bin\Debug\netcoreapp2.1\Pato
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\bin\Debug\netcoreapp2.1\Pato_Palace.pdb
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\bin\Debug\netcoreapp2.1\Pato_Palace.Views.dll
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\bin\Debug\netcoreapp2.1\Pato_Palace.Views.pdb
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.csprojAssemblyReference.cache
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.csproj.CoreCompileInputs.cache
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.RazorAssemblyInfo.cache
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.RazorAssemblyInfo.cs
@@ -71,7 +72,9 @@ C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razo
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\AboutUs.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Blog.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Busket.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\BuyNow.g.cshtml.cs
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\ContactUs.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Events.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Gallery.g.cshtml.cs
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -89,4 +92,3 @@ C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.dll
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.pdb
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.csproj.CopyComplete
-C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.csprojAssemblyReference.cache

@@ -177,5 +177,32 @@ function minus() {
 }
 
 
+var countBusket = 0;
+var addCArd = document.getElementById('addToCard');
+var bucketcount = document.getElementById('lblCartCount');
+
+if (countBusket === 0) {
+   get_count()
+}
+
+function get_count() {
+    countBusket = localStorage.getItem("product");
+    bucketcount.innerText = countBusket;
+}
+
+function pluscount() {
+    countBusket++;
+    localStorage.setItem("product",countBusket)
+    bucketcount.innerText = countBusket;
+
+    
+}
+
+
+function RemoveCount() {
+
+    localStorage.setItem("product", 0)
+    get_count();
+}
 
 

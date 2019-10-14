@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pato_Palace.DAL;
 
 namespace Pato_Palace.Migrations
 {
     [DbContext(typeof(Pato_PalaceDbContext))]
-    partial class Pato_PalaceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191011062749_UpdateBuscetTable")]
+    partial class UpdateBuscetTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
