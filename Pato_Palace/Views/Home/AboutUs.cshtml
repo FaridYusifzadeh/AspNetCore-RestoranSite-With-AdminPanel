@@ -27,129 +27,131 @@
 
 <body>
     <!-- header starts -->
-    <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
+    <header   style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-                <a class="navbar-brand" href="Index.html">
-                    <img src="~/Images/logo/logo.png" alt="">
-                </a>
-                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div id="header_navs">
+                <nav  class="navbar navbar-expand-lg navbar-light fixed-top">
+                    <a class="navbar-brand" href="Index.html">
+                        <img id="logo_img" src="~/Images/logo/logo.png" alt="IMG-LOGO">
+                        <img id="logo_img2" src="~/Images/logo/logo2.png" alt="IMG-LOGO">
+                    </a>
+                    <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
-                                Home
-                            </a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Home
+                                </a>
 
-                        </li>
+                            </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                About Us
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="Menu">Menu</a>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="OurChefs">Our Chef</a>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="Events">Events</a>
-                                <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Reservation
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Gallery
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item ">
-                            <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Blog
-                            </a>
-
-                        </li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
-                                    Shop
+                                    About Us
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
-
-
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Menu">Menu</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="OurChefs">Our Chef</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Events">Events</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                                 </div>
                             </li>
-                        }
-                        <li class="nav-item ">
-                            <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Contact Us
-                            </a>
-
-                        </li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                    @User.Identity.Name
-                                </a>
-
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
-                                    LogOut
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Reservation
                                 </a>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-shopping-basket">
-
-                                    </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Gallery
                                 </a>
+
                             </li>
-                        }
-                        else
-                        {
+
                             <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Login
+                                <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Blog
                                 </a>
 
                             </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                       aria-expanded="false">
+                                        Shop
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+
+
+                                    </div>
+                                </li>
+                            }
                             <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Register
+                                <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Contact Us
                                 </a>
 
                             </li>
-                        }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item ">
+                                    <a class="nav-link ml-1 mr-1" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                        @User.Identity.Name
+                                    </a>
+
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Logout" role="button" aria-haspopup="true" aria-expanded="false">
+                                        LogOut
+                                    </a>
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-shopping-basket">
+
+                                        </i>
+                                        <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item ">
+                                    <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                                        Login
+                                    </a>
+
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
+                                        Register
+                                    </a>
+
+                                </li>
+                            }
 
 
-                    </ul>
+                        </ul>
 
-                </div>
-            </nav>
-
+                    </div>
+                </nav>
+            </div>
             <div class="row">
                 <div class="col-12 header-text">
                     <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 6rem">Story</h2>

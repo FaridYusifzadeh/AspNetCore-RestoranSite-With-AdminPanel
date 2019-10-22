@@ -166,7 +166,7 @@
                             <div class="col-lg-4 col-md-12">
                                 <div class="col-12 mt-5">
                                     <h5 class="d-inline">
-                                        <a href=""> @menu.Title </a>
+                                        <a> @menu.Title </a>
                                     </h5>
                                     <h5 class="d-inline float-right"> $@menu.Price</h5>
                                     <h6 style="    position: relative;color: #616060;font-size: 15px;font-family: 'Open Sans', sans-serif; margin-top:15px">
@@ -259,9 +259,12 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button style="     background: #8b755a;color:white;font-weight:bold;font-size:2em;margin-top:20px !important;    border: 2px solid #8b755a;line-height: 24px;    text-align: center;   border-radius: 0px; font-size: 12px; letter-spacing: 2px; padding: 13px 43px; margin-top: 10px;cursor: pointer;text-transform:uppercase;">
-                        find a table
-                    </button>
+                    <a  asp-controller="Account" asp-action="Login">
+                      
+                        <button style="     background: #8b755a;color:white;font-weight:bold;font-size:2em;margin-top:20px !important;    border: 2px solid #8b755a;line-height: 24px;    text-align: center;   border-radius: 0px; font-size: 12px; letter-spacing: 2px; padding: 13px 43px; margin-top: 10px;cursor: pointer;text-transform:uppercase;">
+                            find a table
+                        </button>
+                    </a>
                 </div>
             </div>
 
