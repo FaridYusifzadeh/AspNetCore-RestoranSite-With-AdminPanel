@@ -2,12 +2,10 @@
 
 $(document).ready(function () {
 
-
   
 // <!-- <=================================================> -->
   // <!-- <=================START NAV BAR===================> -->
   // <!-- <=================================================> -->
-
 
 
 
@@ -26,7 +24,7 @@ $(document).ready(function () {
       $("#header_navs").css("display", "block");
       $("#header_navs  ").css("color", "red");
       $("#header_navs #src_head ").css("background-color", "white");
-      $("#header_navs  ").css("background-color", "rgba(136,136,136,0.6)");
+      $("#header_navs  ").css("background-color", "rgba(136,136,136,1)");
       $("#header_navs  ").css("box-shadow", "0px 23px 34px -12px black");
      
 
@@ -72,13 +70,6 @@ $(document).ready(function () {
     }, 1500);
     return false;
   });
-
-
-
-
-
-
-
 
 
 

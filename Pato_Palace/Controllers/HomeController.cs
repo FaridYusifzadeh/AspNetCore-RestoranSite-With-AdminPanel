@@ -77,7 +77,25 @@ namespace Pato_Palace.Controllers
         }
         public ActionResult Blog()
         {
+            return View(homeModel);
+        }
+
+        public ActionResult BlogDetail()
+        {
             return View();
+        }
+
+        public async Task<IActionResult> BlogReadmore(int? id)
+        {
+            if (id == null) return NotFound();
+            ShopNowProduct shopNowProduct = await _context.ShopNowProducts.FindAsync(id);
+
+            if (shopNowProduct != null)
+            {
+                return View(shopNowProduct);
+            }
+
+            return NotFound();
         }
 
         public ActionResult ContactUs()

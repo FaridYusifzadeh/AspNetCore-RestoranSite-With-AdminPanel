@@ -29,8 +29,7 @@
     <!-- header starts -->
     <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
         <div class="container">
-
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
                 <a class="navbar-brand" href="Index.html">
                     <img src="~/Images/logo/logo.png" alt="">
                 </a>
@@ -76,7 +75,17 @@
                             </a>
 
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                Shop
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
 
+
+                            </div>
+                        </li>
                         <li class="nav-item ">
                             <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -84,28 +93,13 @@
                             </a>
 
                         </li>
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Shop
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
-
-
-                                </div>
-                            </li>
-                        }
                         <li class="nav-item ">
-                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
+                            <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
                                aria-expanded="false">
                                 Contact Us
                             </a>
 
                         </li>
-
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item ">
@@ -120,7 +114,6 @@
                                 </a>
 
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
@@ -130,21 +123,7 @@
                                 </a>
                             </li>
                         }
-                        else
-                        {
-                            <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Login
-                                </a>
 
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Register
-                                </a>
-
-                            </li>
-                        }
 
 
                     </ul>
@@ -157,7 +136,7 @@
 
             <div class="row">
                 <div class="col-12 header-text">
-                    <h2 class="text-center" style="margin-top:170px;color: wheat;font-size: 6rem">Blog</h2>
+                    <h2 class="text-center" style="margin-top:130px;color: wheat;font-size: 6rem">Blog</h2>
 
                 </div>
             </div>
@@ -186,190 +165,58 @@
     <section class="also-like shop-now">
         <div class="container">
             <div class="row text-center" style="margin-top:100px;">
-                <div class="col-lg-4 mt-4">
 
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
+                @foreach (var item in Model.ShopNowProducts)
 
-                        <img src="http://monde.elitelayers.com/html/images/background/news-1.jpg" alt="">
+                {
+                    <div class="col-lg-4 mt-5">
 
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>MAGIC HAPPEN</h4>
-                        </a>
+                        <div class="col-12" style="padding-left:0px;padding-right:0px;">
+                            <div class="layout">
+                                <button class="addBtn">
+                                    add to card
+                                </button>
+                            </div>
+                            <img src="~/Images/@item.Image" alt="">
 
-                    </div>
-                    <div class="col-12 mt-3 post-date mt-2">
-                        <a href="">
-                            Jan 10, 2017 / Recipes / by Andrea
-                        </a>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <a href="">
+                                <h4>@item.Title</h4>
+                                <span>
+                                    $@item.Price
+                                </span>
+                                <p>
+                                    Present you the blanks of our cooks
+                                    <br />
+                                    <strong>Alen Remsi</strong> 
+                                </p>
+                            </a>
 
+                        </div>
+                        <div class="col-12 mt-3">
+                            <div class="row">
 
-                    </div>
-                    <div class="col-12 receipt-text mt-4">
-                        Aenean sollicitudin, lorem quis bibendum auctor elit consequat ipsum, nec sagittis sem nibh id elit. Duised odio siamet nibh
-                        vulputate cursus amet mauris.
-                    </div>
-                    <div class="col-12 mt-5 ">
-                        <a class="read-more" href="">Read More</a>
-                    </div>
+                                <div class="col-6">
+                                    <div class="col-lg-7  text-center ">
+                                        <a asp-action="BlogReadmore" asp-route-id="@item.Id">
+                                            <button style="  border: 2px solid #7A674F;  background: #7A674F; padding: 6px 37px;
+         line-height: 21px; margin-top:0%"
+                                                    class="addBtn">
+                                                Readmore
+                                            </button>
+                                        </a>
 
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-
-                        <img src="http://monde.elitelayers.com/html/images/background/news-2.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>HOW TO MAKE</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3 post-date mt-2">
-                        <a href="">
-                            Jan 15, 2017 / Recipes / by Andrea
-                        </a>
-
-
-                    </div>
-                    <div class="col-12 receipt-text mt-4">
-                        Aenean sollicitudin, lorem quis bibendum auctor elit consequat ipsum, nec sagittis sem nibh id elit. Duised odio siamet nibh
-                        vulputate cursus amet mauris.
-                    </div>
-                    <div class="col-12 mt-5 ">
-                        <a class="read-more" href="">Read More</a>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-
-                        <img src="http://monde.elitelayers.com/html/images/background/news-3.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>WINE SELECTION</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3 post-date mt-2">
-                        <a href="">
-                            Jan 06, 2017 / Wine / by Andrea
-                        </a>
+                }
 
 
-                    </div>
-                    <div class="col-12 receipt-text mt-4">
-                        Aenean sollicitudin, lorem quis bibendum auctor elit consequat ipsum, nec sagittis sem nibh id elit. Duised odio siamet nibh
-                        vulputate cursus amet mauris.
-                    </div>
-                    <div class="col-12 mt-5 ">
-                        <a class="read-more" href="">Read More</a>
-                    </div>
 
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-
-                        <img src="http://monde.elitelayers.com/html/images/resource/news-4.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>PREPARING KITCHEN</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3 post-date mt-2">
-                        <a href="">
-                            Jan 05, 2017 / Recipes / by Andrea
-
-                        </a>
-
-
-                    </div>
-                    <div class="col-12 receipt-text mt-4">
-                        Aenean sollicitudin, lorem quis bibendum auctor elit consequat ipsum, nec sagittis sem nibh id elit. Duised odio siamet nibh
-                        vulputate cursus amet mauris.
-                    </div>
-                    <div class="col-12 mt-5 ">
-                        <a class="read-more" href="">Read More</a>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-
-                        <img src="http://monde.elitelayers.com/html/images/resource/news-5.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>BAKERY TRAINING</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3 post-date mt-2">
-                        <a href="">
-                            Jan 04, 2017 / Cooking / by Andrea
-                        </a>
-
-
-                    </div>
-                    <div class="col-12 receipt-text mt-4">
-                        Aenean sollicitudin, lorem quis bibendum auctor elit consequat ipsum, nec sagittis sem nibh id elit. Duised odio siamet nibh
-                        vulputate cursus amet mauris.
-                    </div>
-                    <div class="col-12 mt-5 ">
-                        <a class="read-more" href="">Read More</a>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 mt-4">
-
-                    <div class="col-12" style="padding-left:0px;padding-right:0px;">
-
-                        <img src="http://monde.elitelayers.com/html/images/resource/news-6.jpg" alt="">
-
-                    </div>
-                    <div class="col-12 mt-3">
-                        <a href="">
-                            <h4>FAVORITE PLACE</h4>
-                        </a>
-
-                    </div>
-                    <div class="col-12 mt-3 post-date mt-2">
-                        <a href="">
-                            Jan 01, 2017 / Places / by Andrea
-                        </a>
-
-
-                    </div>
-                    <div class="col-12 receipt-text mt-4">
-                        Aenean sollicitudin, lorem quis bibendum auctor elit consequat ipsum, nec sagittis sem nibh id elit. Duised odio siamet nibh
-                        vulputate cursus amet mauris.
-                    </div>
-                    <div class="col-12 mt-5 ">
-                        <a class="read-more" href="">Read More</a>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-12 activePage  text-center mt-5">
-                    <a class="activeCount" href="">1</a>
-                    <a class="" href="">2</a>
-                    <p class="text-right ">
-                        PAGE 1 OF 2
-                    </p>
-
-                </div>
 
             </div>
         </div>
@@ -386,7 +233,7 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6 style="margin-top: 11px">Contact</h6>
+                            <h6>Contact</h6>
                         </div>
                         <div class="col-12">
                             <p>
@@ -411,14 +258,15 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-12">
-                            <h6 style="margin-top: 11px">Hours</h6>
+                            <h6>Hours</h6>
                         </div>
                         <div class="col-12">
                             <p>
                                 Every day
                                 <br> from Noon to 1:30 pm
                                 <br> and from 7 pm to 9:30 pm
-                            </p>
+                            </p> <br> and from 7 pm to 9:30 pm
+
                         </div>
                     </div>
                 </div>
@@ -440,7 +288,7 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
             integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
             crossorigin="anonymous"></script>

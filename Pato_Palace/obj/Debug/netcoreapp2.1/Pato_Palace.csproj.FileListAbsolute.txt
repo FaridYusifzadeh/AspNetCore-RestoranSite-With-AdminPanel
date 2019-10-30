@@ -92,3 +92,4 @@ C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.dll
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.pdb
 C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Pato_Palace.csproj.CopyComplete
+C:\Users\Farid\source\repos\Pato_Palace\Pato_Palace\obj\Debug\netcoreapp2.1\Razor\Views\Home\BlogReadmore.g.cshtml.cs

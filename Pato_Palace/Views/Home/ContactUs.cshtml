@@ -28,7 +28,7 @@
     <!-- header starts -->
     <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light ">
                 <a class="navbar-brand" href="Index.html">
                     <img src="~/Images/logo/logo.png" alt="">
                 </a>
@@ -39,7 +39,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-
                         <li class="nav-item">
                             <a class="nav-link " asp-controller="Home" asp-action="Index" role="button" aria-haspopup="true" aria-expanded="false">
                                 Home
@@ -68,7 +67,6 @@
 
                         </li>
 
-
                         <li class="nav-item">
                             <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -76,17 +74,7 @@
                             </a>
 
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                Shop
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
 
-
-                            </div>
-                        </li>
                         <li class="nav-item ">
                             <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -94,8 +82,22 @@
                             </a>
 
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+
+
+                                </div>
+                            </li>
+                        }
                         <li class="nav-item ">
-                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
+                            <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
                                aria-expanded="false">
                                 Contact Us
                             </a>
@@ -115,6 +117,7 @@
                                 </a>
 
                             </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
@@ -124,18 +127,30 @@
                                 </a>
                             </li>
                         }
+                        else
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Login
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Register
+                                </a>
+
+                            </li>
+                        }
 
                     </ul>
 
                 </div>
             </nav>
 
-
-
-
             <div class="row">
                 <div class="col-12 header-text">
-                    <h2 class="text-center" style="margin-top:170px;color: wheat;font-size: 6rem;">Contact Us</h2>
+                    <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 4rem;">Reservation</h2>
 
                 </div>
             </div>
@@ -254,7 +269,7 @@
                             <h6 style="margin-top: 11px">Contact</h6>
                         </div>
                         <div class="col-12">
-                            p>+994-70-571-21-55
+                            <p>+994-70-571-21-55
                             <br> Old City - Asef Zeynalli street, Baku, Azerbaijan
                             <br> fariddsx2015@gmail.com
                             </p>
