@@ -30,7 +30,7 @@
     <header   style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
         <div class="container">
             <div id="header_navs">
-                <nav  class="navbar navbar-expand-lg navbar-light fixed-top">
+                <nav  class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="Index.html">
                         <img id="logo_img" src="~/Images/logo/logo.png" alt="IMG-LOGO">
                         <img id="logo_img2" src="~/Images/logo/logo2.png" alt="IMG-LOGO">
@@ -62,13 +62,7 @@
                                     <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Reservation
-                                </a>
 
-                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
@@ -87,6 +81,13 @@
                             </li>
                             @if (User.Identity.IsAuthenticated)
                             {
+                                <li class="nav-item">
+                                    <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                                       aria-expanded="false">
+                                        Reservation
+                                    </a>
+
+                                </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                        aria-expanded="false">
@@ -122,11 +123,11 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-shopping-basket">
 
                                         </i>
-                                        <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                        <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                     </a>
                                 </li>
                             }
@@ -154,7 +155,7 @@
             </div>
             <div class="row">
                 <div class="col-12 header-text">
-                    <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 6rem">Story</h2>
+                    <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 6rem">About Us</h2>
 
                 </div>
             </div>
@@ -211,11 +212,7 @@
                                 eu in elit lass aptent taciti sociosqu.
                             </p>
                         </div>
-                        <div class="col-12">
-                            <button class="btn-get-the-best">
-                                find a table
-                            </button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -121,11 +121,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
                             </li>
                         }
@@ -187,53 +187,58 @@
                     <h1 style="font-weight: 700;    position: relative; color: #232323; font-size: 42px; font-weight: 700; line-height: 1.2em; padding-bottom: 35px; letter-spacing: 1px; text-transform: uppercase;">RESERVATION</h1>
                 </div>
             </div>
+                <form method="post" asp-controller="Home" asp-action="AddReserv">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group row">
-                        <label for="example-date-input" class="col-2 col-form-label">
-                            <i style="font-size:25px;" class="far fa-calendar"></i>
-                        </label>
-                        <div class="col-8">
-                            <input class="form-control" type="date" value="2019-05-15" id="example-date-input">
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label for="example-date-input" class="col-2 col-form-label">
+                                <i style="font-size:25px;" class="far fa-calendar"></i>
+                            </label>
+                            <div class="col-8">
+                                <input class="form-control" type="date" name="date" value="2019-05-15" id="example-date-input">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group row">
-                        <label for="example-time-input" class="col-2 col-form-label">
-                            <i style="font-size:25px;" class="far fa-clock"></i>
-                        </label>
-                        <div class="col-8">
-                            <input class="form-control" type="time" value="19:00:00" id="example-time-input">
+
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label for="example-time-input" class="col-2 col-form-label">
+                                <i style="font-size:25px;" class="far fa-clock"></i>
+                            </label>
+                            <div class="col-8">
+                                <input class="form-control" type="time" name="time" value="19:00:00" id="example-time-input">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group row">
-                        <label for="example-number-input" class="col-2 col-form-label">
-                            <i style="font-size:25px;" class="fas fa-user"></i>
-                        </label>
-                        <div class="col-8">
-                            <input class="form-control" type="number" value="0" max="6" min="0" id="example-number-input">
+
+                    <div class="col-md-4">
+                        <div class="form-group row">
+                            <label for="example-number-input" class="col-2 col-form-label">
+                                <i style="font-size:25px;" class="fas fa-user"></i>
+                            </label>
+                            <div class="col-8">
+                                <input class="form-control" type="number" value="0" name="personCount" max="6" min="0" id="example-number-input">
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <a asp-controller="Account" asp-action="Login">
-                    <button style="     background: #8b755a;color:white;font-weight:bold;font-size:2em;margin-top:20px !important;    border: 2px solid #8b755a;line-height: 24px;    text-align: center;   border-radius: 0px; font-size: 12px; letter-spacing: 2px; padding: 13px 43px; margin-top: 10px;cursor: pointer;text-transform:uppercase;">
-                        find a table
-                    </button>
+                    <a>
+                        <button type="submit" style="     background: #8b755a;color:white;font-weight:bold;font-size:2em;margin-top:20px !important;    border: 2px solid #8b755a;line-height: 24px;    text-align: center;   border-radius: 0px; font-size: 12px; letter-spacing: 2px; padding: 13px 43px; margin-top: 10px;cursor: pointer;text-transform:uppercase;">
+                            find a table
+                        </button>
                     </a>
+                    <h6 class="mt-4" style="color: #8b755a; font-size:2em;"> @ViewBag.Msg</h6>
                 </div>
             </div>
+                </form>
 
 
 
 
 
-    </section>
+</section>
 
     <!-- Reservation ends -->
     <!-- Telephone RESERVATION starts -->
@@ -254,7 +259,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-12">
-                    <img src="Images/call1928e537.jpg" alt="">
+                    <img src="~/Images/call1928e537.jpg" alt="">
                 </div>
             </div>
         </div>

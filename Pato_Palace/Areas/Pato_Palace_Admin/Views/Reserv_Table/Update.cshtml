@@ -1,0 +1,45 @@
+﻿@model Reserv_Table
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container-fluid" style="margin-top:110px;">
+    <div class="row mt-5">
+        <div class="col-12 mt-5">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="UserId">Username:</label>
+                    <input asp-for="UserId" class="form-control" />
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Date">Date:</label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Time">Time:</label>
+                    <input asp-for="Time" class="form-control" />
+                    <span asp-validation-for="Time" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Persone_Count">Persone_Count:</label>
+                    <input asp-for="Persone_Count" class="form-control" />
+                    <span asp-validation-for="Persone_Count" class="text-danger"></span>
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="Update" />
+            </form>
+
+            <div class="row mt-5">
+                <div class="col-12">
+                    <a asp-action="Index"><i class=" far fa-arrow-alt-circle-left"></i>  Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

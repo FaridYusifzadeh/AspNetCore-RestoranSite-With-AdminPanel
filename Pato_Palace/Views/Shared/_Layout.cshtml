@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model HomeModel
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -72,13 +73,7 @@
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Reservation
-                            </a>
 
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
@@ -89,6 +84,14 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Reservation
+                                </a>
+
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
@@ -96,7 +99,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
-                                 
+
 
                                 </div>
                             </li>
@@ -112,7 +115,7 @@
 
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true" aria-expanded="false">
                                 Contact Us
                             </a>
 
@@ -133,11 +136,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
-
+                                        
                                     </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
                             </li>
                         }

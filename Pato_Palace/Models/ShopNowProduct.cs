@@ -20,9 +20,7 @@ namespace Pato_Palace.Models
 
         [Required, StringLength(300)]
         public string Image { get; set; }
-      
-        public ICollection<Buscket> Busckets { get; set; }
-
+   
 
     }
 }

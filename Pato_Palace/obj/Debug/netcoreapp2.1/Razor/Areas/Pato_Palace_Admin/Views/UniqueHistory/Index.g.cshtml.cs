@@ -89,7 +89,7 @@ using Pato_Palace.Models;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(751, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91e69bc59f714536b7c3d995f032fce4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "260200caa8844d35a4f96fa0d5d396b4", async() => {
                 BeginContext(798, 42, true);
                 WriteLiteral(" <i class=\"fas fa-pencil-alt\"></i>  Create");
                 EndContext();
@@ -179,7 +179,7 @@ using Pato_Palace.Models;
             WriteLiteral("</td>\r\n                                <td>\r\n                                    ");
             EndContext();
             BeginContext(1636, 204, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ff08fb42d4c94f15852d752e8e11f794", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dcb94a76b8594ac2a9110bdbfa80ef0f", async() => {
                 BeginContext(1709, 127, true);
                 WriteLiteral("\r\n                                        <i class=\" fas fa-eye\" style=\"color:white\"></i>\r\n                                    ");
                 EndContext();
@@ -215,7 +215,7 @@ using Pato_Palace.Models;
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(1878, 204, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07a13e0381ee402e82abc0efbddd0529", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5704c31f0ada48cdbcb3309874e6f88b", async() => {
                 BeginContext(1951, 127, true);
                 WriteLiteral("\r\n                                        <i class=\"fas fa-edit\" style=\"color:white\"></i>\r\n                                    ");
                 EndContext();
@@ -251,7 +251,7 @@ using Pato_Palace.Models;
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(2120, 208, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0061e8c0f2e143f6aee986fff857af9c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "771001f833b04e8094c2ef972beb0d4f", async() => {
                 BeginContext(2192, 132, true);
                 WriteLiteral("\r\n                                        <i class=\"far fa-trash-alt\" style=\"color:white\"></i>\r\n                                    ");
                 EndContext();

@@ -63,13 +63,7 @@
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Reservation
-                            </a>
 
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
@@ -88,6 +82,13 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Reservation
+                                </a>
+
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
@@ -101,7 +102,7 @@
                             </li>
                         }
                         <li class="nav-item ">
-                            <a class="nav-link "  asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
+                            <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
                                aria-expanded="false">
                                 Contact Us
                             </a>
@@ -123,11 +124,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
                             </li>
                         }
@@ -186,7 +187,9 @@
                         <div class="row text-center">
                             <div class="col-12">
                                 <h1 style="    color: #232323;font-size: 32px;font-weight: 700;letter-spacing: 1px;margin-bottom: 5px;z-index: 11;text-transform: uppercase;">
-                                    THOMAS ANDERSON
+                                    Allegro Barbarossa
+                                  
+
                                 </h1>
                                 <p style="    position: relative;color: #232323;font-size: 16px;font-weight: 400;margin-bottom: 35px;z-index: 11;text-transform: capitalize;">
                                     Executif Chef
@@ -200,9 +203,7 @@
                                     bodio tincwa idunt auctor a ornare odio.
                                 </p>
                             </div>
-                            <div class="col-12 mb-5">
-                                <a href="" style="    position: relative;color: #8b755a;font-size: 12px;font-weight: 700;letter-spacing: 1px;padding-bottom: 1px;display: inline-block;text-transform: uppercase;border-bottom: 2px solid #8b755a;">CREATIONS</a>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -278,7 +279,8 @@
                             <div class="col-12 text-center mt-4">
                                 <a href="">
                                     <h3 style="font-size: 18px;font-weight: 700;letter-spacing: 1px;text-transform: up;    color: #8b755a;">
-                                        THOMAS ANDERSON
+                                        Bonmarito  Bottichelli
+                                      
                                     </h3>
                                 </a>
                                 <p class="mt-1"> Chef</p>
@@ -301,7 +303,7 @@
                     <div class="row bg-light d-flex align-items-center" style="margin:70px 60px;">
                         <div class="col-lg-6 ">
 
-                            <img src="http://monde.elitelayers.com/html/images/resource/chef-1.jpg" alt="">
+                            <img src="https://i1.poltava.to/news/203/20216/photo.jpg" alt="">
 
 
                         </div>
@@ -309,7 +311,8 @@
                             <div class="col-12 text-center mt-4">
                                 <a href="">
                                     <h3 style="font-size: 18px;font-weight: 700;letter-spacing: 1px;text-transform: up;    color: #8b755a;">
-                                        THOMAS ANDERSON
+                                        Guerra  Ghirlandaio
+                                      
                                     </h3>
                                 </a>
                                 <p class="mt-1"> Chef</p>

@@ -27,7 +27,8 @@ namespace Pato_Palace.DAL
         public DbSet<Order_gift> Order_gifts { get; set; }
         public DbSet<ShopNowProduct> ShopNowProducts { get; set; }
         public DbSet<Buscket> Busckets { get; set; }
-
+        public DbSet<Reserv_Table> Reserv_Tables { get; set; }
+        
 
 
     }

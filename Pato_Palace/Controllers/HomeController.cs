@@ -6,21 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Pato_Palace.DAL;
 using Pato_Palace.Models;
 using Pato_Palace.ViewModels;
+using System.Security.Claims;
+using Pato_Palace.Controllers;
+using Microsoft.AspNetCore.Identity;
 
 namespace Pato_Palace.Controllers
 {
     public class HomeController : Controller
     {
         private Pato_PalaceDbContext _context;
-
+        public AppUser user;
+        UserManager<AppUser> manager;
         //public static HomeModel homemodel ;
         HomeModel homeModel;
 
 
-        public HomeController(Pato_PalaceDbContext context)
+        public HomeController(Pato_PalaceDbContext context, UserManager<AppUser> userManager)
         {
+
             _context = context;
-             homeModel = new HomeModel
+            homeModel = new HomeModel
             {
                 Sliders = _context.Sliders,
                 UniqueHistories = _context.UniqueHistories,
@@ -33,47 +38,56 @@ namespace Pato_Palace.Controllers
                 Locations = _context.Locations,
                 Order_gifts = _context.Order_gifts,
                 ShopNowProducts = _context.ShopNowProducts,
-                Busckets=_context.Busckets
+                Busckets = _context.Busckets,
+                Reserv_Tables=_context.Reserv_Tables
             };
-
+            manager = userManager;
         }
+
+
+        public string getuser()
+        {
+            var user = manager.GetUserId(HttpContext.User);
+            return user;
+        }
+
         public IActionResult Index()
         {
-            
+
 
 
             return View(homeModel);
         }
         public ActionResult AboutUs()
         {
-            return View();
+            return View(homeModel);
         }
 
         public ActionResult Menu()
         {
-            return View();
+            return View(homeModel);
         }
 
         public ActionResult OurChefs()
         {
-            return View();
+            return View(homeModel);
         }
         public ActionResult Events()
         {
-            return View();
+            return View(homeModel);
         }
         public ActionResult Locations()
         {
-            return View();
+            return View(homeModel);
         }
         public ActionResult Reservation()
         {
-            return View();
+            return View(homeModel);
         }
 
         public ActionResult Gallery()
         {
-            return View();
+            return View(homeModel);
         }
         public ActionResult Blog()
         {
@@ -82,17 +96,21 @@ namespace Pato_Palace.Controllers
 
         public ActionResult BlogDetail()
         {
-            return View();
+            return View(homeModel);
         }
 
         public async Task<IActionResult> BlogReadmore(int? id)
         {
             if (id == null) return NotFound();
+            List<ShopNowProduct> myproducts = new List<ShopNowProduct>();
             ShopNowProduct shopNowProduct = await _context.ShopNowProducts.FindAsync(id);
 
             if (shopNowProduct != null)
             {
-                return View(shopNowProduct);
+                myproducts.Add(shopNowProduct);
+                homeModel.ShopNowProducts = myproducts;
+
+                return View(homeModel);
             }
 
             return NotFound();
@@ -100,54 +118,159 @@ namespace Pato_Palace.Controllers
 
         public ActionResult ContactUs()
         {
-            return View();
+            return View(homeModel);
         }
-        public IActionResult ShopNow  ()
+        public IActionResult ShopNow()
         {
-            
+
             return View(homeModel);
         }
 
-        
+
 
         public async Task<IActionResult> BuyNow(int? id)
         {
             if (id == null) return NotFound();
+            List<ShopNowProduct> myproducts = new List<ShopNowProduct>();
             ShopNowProduct shopNowProduct = await _context.ShopNowProducts.FindAsync(id);
 
             if (shopNowProduct != null)
             {
-                return View(shopNowProduct);
+                myproducts.Add(shopNowProduct);
+                homeModel.ShopNowProducts = myproducts;
+
+                return View(homeModel);
             }
 
             return NotFound();
         }
 
-        [HttpGet]
-        public  IActionResult Busket()
+
+        public IActionResult Buscket()
         {
-           
+            var UserId = getuser();
+            List<ShopNowProduct> myproducts = new List<ShopNowProduct>();
+            var busket = _context.Busckets.Where(bus => bus.AppUserId == UserId);
+            foreach (var i in busket)
+            {
+                var products = _context.ShopNowProducts.Find(i.ShopNowProductId);
+                myproducts.Add(products);
+            }
+
+            homeModel.ShopNowProducts = myproducts;
+
             return View(homeModel);
         }
 
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public IActionResult Busket(string a)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> BuscketProduct(int? id,string count)
         {
-            //if (user == null) return NotFound();
-            //ShopNowProduct prod = await _context.ShopNowProducts.FindAsync(id);
-            //AppUser user = await _context.Users.FindAsync(User.Identity.Name);
-            //Buscket b = new Buscket
-            //{
-            //    CountProduct = countproduct,
-            //    ShopNowProductId = prod.Id,
-            //    AppUserId = user.Id
-            ////};
-            //var buscket = await _context.Busckets.AddAsync(b);
-            //_context.SaveChanges();
-            return View();
+            var UserId = getuser();
+            List<ShopNowProduct> myproducts = new List<ShopNowProduct>();
+            var busket = _context.Busckets.Where(bus => bus.AppUserId == UserId);
+
+            if (id != null)
+            {
+                ShopNowProduct shopNowProduct = await _context.ShopNowProducts.FindAsync(id);
+
+
+                if (!string.IsNullOrWhiteSpace(count))
+                {
+                    int cnt = int.Parse(count);
+                    for (int i = 0; i < cnt; i++)
+                    {
+                        Buscket bs = new Buscket();
+
+                        bs.ShopNowProductId = shopNowProduct.Id;
+                        bs.AppUserId = UserId;
+
+                        _context.Busckets.Add(bs);
+                    }
+                  
+                }
+               
+
+                await _context.SaveChangesAsync();
+
+
+
+                foreach (var i in busket)
+                {
+                    var products = _context.ShopNowProducts.Find(i.ShopNowProductId);
+                    myproducts.Add(products);
+                }
+
+                homeModel.ShopNowProducts = myproducts;
+
+                return View(homeModel);
+
+
+            }
+            return NotFound();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[ActionName("Delete")]
+        public IActionResult DeleteProducts()
+        {
+            var UserId = getuser();
+
+
+            var busket = _context.Busckets.Where(bus => bus.AppUserId == UserId);
+            foreach (var i in busket)
+            {
+
+                _context.Busckets.Remove(i);
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Buscket));
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteProduct(string delete)
+        {
+            var UserId = getuser();
+
+
+            var busket = _context.Busckets.Where(bus => bus.AppUserId == UserId);
+            foreach (var i in busket)
+            {
+                if (i.ShopNowProductId == int.Parse(delete))
+                {
+
+                 _context.Busckets.Remove(i);
+                    break;
+                }
+                
+            }
+            _context.SaveChanges();
+
+            return RedirectToAction(nameof(Buscket));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddReserv(string date, string time, string personCount)
+        {
+            var UserId = getuser();
+            Reserv_Table res = new Reserv_Table();
+            res.Date = date;
+            res.Time = time;
+            res.UserId = UserId;
+            res.Persone_Count =int.Parse(personCount);
+            _context.Reserv_Tables.Add(res);
+            _context.SaveChanges();
+            ViewBag.Msg = "Success";
+            return View("Views/Home/Reservation.cshtml",homeModel);
+        }
+
 
     }
 }

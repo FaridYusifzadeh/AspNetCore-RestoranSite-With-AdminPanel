@@ -115,11 +115,11 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
                             </li>
                         }

@@ -10,6 +10,6 @@ namespace Pato_Palace.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public ICollection<Buscket> Busckets { get; set; }
+    
     }
 }

@@ -1,0 +1,26 @@
+﻿@model  Reserv_Table
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container-fluid" style="margin-top:110px;">
+
+    <div class="row mt-5">
+        <div class="col-12 mt-5">
+           
+                <p>@Model.UserId</p>
+                <p class="mt-4">DAte :   @Model.Date</p>
+                <p  class="mt-4">Time :   @Model.Time</p>
+                <p  class="mt-4">Person_Count :   @Model.Persone_Count</p>
+         
+
+
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <a asp-action="Index"><i class=" far fa-arrow-alt-circle-left"></i>  Go Back</a>
+        </div>
+    </div>
+</div>
+

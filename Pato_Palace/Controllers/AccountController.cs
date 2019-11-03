@@ -8,7 +8,7 @@ using Pato_Palace.Utilities;
 using Pato_Palace.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Security.Claims;
 
 namespace Pato_Palace.Controllers
 {
@@ -26,6 +26,7 @@ namespace Pato_Palace.Controllers
             _roleManager = roleManager;
             
         }
+        
         public IActionResult Register()
         {
             return View();

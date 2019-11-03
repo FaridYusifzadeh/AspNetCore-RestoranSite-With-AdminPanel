@@ -1,4 +1,4 @@
-﻿@model  ShopNowProduct
+﻿@model  HomeModel
 @{
     Layout = null;
 }
@@ -119,12 +119,12 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button"  aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link"   asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button"  aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
 
-                                <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
                             </li>
                         }
@@ -168,85 +168,98 @@
         
             <div class="container">
                 <div class="row" style="margin-top:150px;">
+                    @foreach (var item in Model.ShopNowProducts)
+                    {
 
-                    <div class="col-lg-6">
-                        <!-- modal part -->
-                        <!-- Button trigger modal -->
-                        <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
+                        <div class="col-lg-6">
+                            <!-- modal part -->
+                            <!-- Button trigger modal -->
+                            <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
 
-                            <img src="~/Images/@Model.Image" alt="">
-                        </a>
+                                <img src="~/Images/@item.Image" alt="">
+                            </a>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
 
-                                    <div class="modal-body">
-                                        <img src="~/Images/@Model.Image" alt="">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <i data-dismiss="modal" class="far fa-times-circle"></i>
-                                        <!-- <button   >Close</button> -->
+                                        <div class="modal-body">
+                                            <img src="~/Images/@item.Image" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <i data-dismiss="modal" class="far fa-times-circle"></i>
+                                            <!-- <button   >Close</button> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- modal part -->
+                            <!-- modal part -->
 
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="col-12 productName">
-                            <h4>
-                                @Model.Title
-                            </h4>
                         </div>
-                        <div class="col-12 productPrice">
-                            <span>$@Model.Price</span>
-                        </div>
-                        <div class="col-12 productInfo mt-5">
-                            <p name="description">
-                                @Model.Description
-                            </p>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <div class="row">
-                                <div class="col-lg-5  mt-4 text-center">
-                                    <div class="input-group  number-spinner ">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" data-dir="dwn" value="-" id="moins" onclick="minus()">
-                                                <i class="fas fa-minus"></i>
+                        <div class="col-lg-6">
+                            <div class="col-12 productName">
+                                <h4>
+                                    @item.Title
+                                </h4>
+                            </div>
+                            <div class="col-12 productPrice">
+                                <span>$@item.Price</span>
+                            </div>
+                            <div class="col-12 productInfo mt-5">
+                                <p name="description">
+                                    @item.Description
+                                </p>
+                            </div>
+                            <form method="post" asp-action="BuscketProduct">
+                                <div class="col-12 mt-4">
+                                    <div class="row">
+                                        <div class="col-lg-5  mt-4 text-center">
+                                            <div class="input-group  number-spinner ">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" data-dir="dwn" type="button" value="-" id="moins" onclick="minus()">
+                                                        <i class="fas fa-minus"></i>
+                                                    </button>
+                                                </span>
+                                                <input type="text" id="count" class="form-control text-center" value="1" name="count" style="padding: 29px;">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="button" data-dir="up" id="plus" value="+" onclick="ustegel()">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-7 mt-4 text-center ">
+
+
+
+                                            @*<a asp-action="BuscketProduct" asp-route-id="@Model.Id">  </a>*@
+
+                                            <button type="submit" id="addToCard" class="addBtn" name="id" value="@item.Id">
+                                                add to cart
                                             </button>
-                                        </span>
-                                        <input type="text" id="count" class="form-control text-center" value="1" style="padding: 29px;">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" data-dir="up" value="+" id="plus" onclick="plus()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </span>
+
+
+                                        </div>
+
                                     </div>
 
-                                </div>
-                                <div class="col-lg-7 mt-4 text-center ">
-                                    
-                                        <button type="submit" id="addToCard" class="addBtn" value="+" onclick=" pluscount()">
-                                            add to card
-                                        </button>
-                                    
-                                </div>
-                            </div> 
 
+                                </div>
+                            </form>
+                            <div class="col-12 mt-5 items">
+                                Weight:
+                                <span>340 gr</span>
+                            </div>
+                            <div class="col-12 mt-2 items">
+                                Category:
+                                <span>Soup</span>
+                            </div>
+                        </div>
 
-                        </div>
-                        <div class="col-12 mt-5 items">
-                            Weight:
-                            <span>340 gr</span>
-                        </div>
-                        <div class="col-12 mt-2 items">
-                            Category:
-                            <span>Soup</span>
-                        </div>
-                    </div>
+                    }
+
                 </div>
 
                 <!-- description -->

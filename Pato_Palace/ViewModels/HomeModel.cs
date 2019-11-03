@@ -20,7 +20,9 @@ namespace Pato_Palace.ViewModels
         public IEnumerable<Order_gift> Order_gifts { get; set; }
         public IEnumerable<ShopNowProduct> ShopNowProducts { get; set; }
         public IEnumerable<Buscket> Busckets { get; set; }
+        public IEnumerable<Reserv_Table> Reserv_Tables { get; set; }
 
+        
 
     }
 }

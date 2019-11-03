@@ -162,13 +162,17 @@ $(document).ready(function () {
 
 });
 
-var count = 1;
-var countEl = document.getElementById("count");
-function plus() {
+
+
+function ustegel() {
+    var countEl = document.getElementById("count");
+    count = countEl.value
     count++;
     countEl.value = count;
 }
 function minus() {
+    var countEl = document.getElementById("count");
+    count = countEl.value
     if (count > 1) {
         count--;
         countEl.value = count;
@@ -184,10 +188,10 @@ if (countBusket === 0) {
    get_count()
 }
 
-function get_count() {
-    countBusket = localStorage.getItem("product");
-    bucketcount.innerText = countBusket;
-}
+//function get_count() {
+//    countBusket = localStorage.getItem("product");
+//    bucketcount.innerText = countBusket;
+//}
 
 function pluscount() {
     countBusket++;

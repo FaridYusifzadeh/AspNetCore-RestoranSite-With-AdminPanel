@@ -59,21 +59,9 @@
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Reservation
-                            </a>
 
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Gallery
-                            </a>
 
-                        </li>
 
                         <li class="nav-item ">
                             <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
@@ -84,6 +72,20 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Reservation
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Gallery
+                                </a>
+
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
@@ -119,11 +121,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
                             </li>
                         }
@@ -150,7 +152,7 @@
 
             <div class="row">
                 <div class="col-12 header-text">
-                    <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 4rem;">Reservation</h2>
+                    <h2 class="text-center" style="margin-top:170px;color: antiquewhite;font-size: 4rem;">Contact Us</h2>
 
                 </div>
             </div>
@@ -200,56 +202,22 @@
                     <div class="row ">
                         <section class="reservation">
                             <div class="container">
-                                <div class="row" style="margin-top:100px">
-
-                                    <div class="col-12 text-center ">
-                                        <h1 style="font-weight: 700;    position: relative; color: #232323; font-size: 22px; font-weight: 700; line-height: 1.2em; padding-bottom: 35px; letter-spacing: 1px; text-transform: uppercase;">get in touch</h1>
+                                <div class="row text-center mb-5" style="margin-top:250px">
+                                    <div class="col-12">
+                                        <h3>
+                                            Telephone Reseption
+                                        </h3>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5>
+                                            Please Call +994-70-571-21-55
+                                        </h5>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group row">
-                                            <label for="example-date-input" class="col-2 col-form-label">
-                                                <i style="font-size:25px;" class="far fa-calendar"></i>
-                                            </label>
-                                            <div class="col-8">
-                                                <input class="form-control" type="date" value="2019-05-15" id="example-date-input">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group row">
-                                            <label for="example-time-input" class="col-2 col-form-label">
-                                                <i style="font-size:25px;" class="far fa-clock"></i>
-                                            </label>
-                                            <div class="col-8">
-                                                <input class="form-control" type="time" value="19:00:00" id="example-time-input">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group row">
-                                            <label for="example-number-input" class="col-2 col-form-label">
-                                                <i style="font-size:25px;" class="fas fa-user"></i>
-                                            </label>
-                                            <div class="col-8">
-                                                <input class="form-control" type="number" value="0" max="6" min="0" id="example-number-input">
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="row mt-5">
+                                    
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <button style="     background: #8b755a;color:white;font-weight:bold;font-size:2em;margin-top:20px !important;    border: 2px solid #8b755a;line-height: 24px;    text-align: center;   border-radius: 0px; font-size: 12px; letter-spacing: 2px; padding: 13px 43px; margin-top: 10px;cursor: pointer;text-transform:uppercase;">
-                                            reservation
-                                        </button>
-                                    </div>
-                                </div>
-
-
-
-
-
+                            </div>
                         </section>
                     </div>
                 </div>

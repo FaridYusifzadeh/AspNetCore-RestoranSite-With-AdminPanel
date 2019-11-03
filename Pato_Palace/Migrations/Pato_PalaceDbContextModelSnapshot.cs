@@ -186,21 +186,15 @@ namespace Pato_Palace.Migrations
 
             modelBuilder.Entity("Pato_Palace.Models.Buscket", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AppUserId");
 
-                    b.Property<int>("CountProduct");
+                    b.Property<int>("ShopNowProductId");
 
-                    b.Property<int?>("ShopNowProductId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("ShopNowProductId");
+                    b.HasKey("id");
 
                     b.ToTable("Busckets");
                 });
@@ -339,6 +333,30 @@ namespace Pato_Palace.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Photo_Menus");
+                });
+
+            modelBuilder.Entity("Pato_Palace.Models.Reserv_Table", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Date")
+                        .IsRequired()
+                        .HasMaxLength(30);
+
+                    b.Property<int>("Persone_Count");
+
+                    b.Property<string>("Time")
+                        .IsRequired()
+                        .HasMaxLength(30);
+
+                    b.Property<string>("UserId")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reserv_Tables");
                 });
 
             modelBuilder.Entity("Pato_Palace.Models.Reservation", b =>
@@ -501,17 +519,6 @@ namespace Pato_Palace.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Pato_Palace.Models.Buscket", b =>
-                {
-                    b.HasOne("Pato_Palace.Models.AppUser", "AppUsers")
-                        .WithMany("Busckets")
-                        .HasForeignKey("AppUserId");
-
-                    b.HasOne("Pato_Palace.Models.ShopNowProduct", "ShopNowProducts")
-                        .WithMany("Busckets")
-                        .HasForeignKey("ShopNowProductId");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,5 +1,5 @@
 ﻿
-@model ShopNowProduct
+@model HomeModel
 @{
     Layout = null;
 }
@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shop</title>
+    <title>Readmore</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -33,12 +33,12 @@
     <!-- header starts -->
     <header style="background-image: url('/Images/bacground_section/Club-del-Doge-Restaurant.jpg');">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
-                <a class="navbar-brand" href="Home.html">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="Index.html">
                     <img src="~/Images/logo/logo.png" alt="">
                 </a>
-                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -64,13 +64,6 @@
                                 <a class="dropdown-item" asp-controller="Home" asp-action="Locations">Location</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
-                               aria-expanded="false">
-                                Reservation
-                            </a>
-
-                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link " asp-controller="Home" asp-action="Gallery" role="button" aria-haspopup="true"
@@ -79,17 +72,7 @@
                             </a>
 
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                Shop
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
 
-
-                            </div>
-                        </li>
                         <li class="nav-item ">
                             <a class="nav-link " asp-controller="Home" asp-action="Blog" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -97,6 +80,27 @@
                             </a>
 
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-controller="Home" asp-action="Reservation" role="button" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Reservation
+                                </a>
+
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    Shop
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ShopNow">Shop Now</a>
+
+
+                                </div>
+                            </li>
+                        }
                         <li class="nav-item ">
                             <a class="nav-link " asp-controller="Home" asp-action="ContactUs" role="button" aria-haspopup="true"
                                aria-expanded="false">
@@ -120,13 +124,27 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Busket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" asp-controller="Home" asp-action="Buscket" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-basket">
 
                                     </i>
-
-                                    <span class='badge badge-warning' id='lblCartCount'>0</span>
+                                    <span class='badge badge-warning' id='lblCartCount'>@Model.Busckets.Count()</span>
                                 </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Login" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Login
+                                </a>
+
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link ml-1 mr-1" asp-controller="Account" asp-action="Register" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Register
+                                </a>
+
                             </li>
                         }
 
@@ -135,12 +153,9 @@
                 </div>
             </nav>
 
-
-
-
             <div class="row">
                 <div class="col-12 header-text">
-                    <h2 class="text-center" style="margin-top:130px;color: wheat;font-size: 6rem">Readmore</h2>
+                    <h2 class="text-center" style="margin-top:170px;color: wheat;font-size: 6rem;">Readmore</h2>
 
                 </div>
             </div>
@@ -168,305 +183,309 @@
     <section class="cart">
 
         <div class="container">
-            <div class="row" style="margin-top:150px;">
+            @foreach (var item in Model.ShopNowProducts)
+            {
+                <div class="row" style="margin-top:150px;">
 
-                <div class="col-lg-6">
-                    <!-- modal part -->
-                    <!-- Button trigger modal -->
-                    <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
+                    <div class="col-lg-6">
+                        <!-- modal part -->
+                        <!-- Button trigger modal -->
+                        <a href="" type="button" data-toggle="modal" data-target="#exampleModal">
 
-                        <img src="~/Images/@Model.Image" alt="">
-                    </a>
+                            <img src="~/Images/@item.Image" alt="">
+                        </a>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
 
-                                <div class="modal-body">
-                                    <img src="~/Images/@Model.Image" alt="">
-                                </div>
-                                <div class="modal-footer">
-                                    <i data-dismiss="modal" class="far fa-times-circle"></i>
-                                    <!-- <button   >Close</button> -->
+                                    <div class="modal-body">
+                                        <img src="~/Images/@item.Image" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <i data-dismiss="modal" class="far fa-times-circle"></i>
+                                        <!-- <button   >Close</button> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- modal part -->
-
-                </div>
-                <div class="col-lg-6">
-                    <div class="col-12 productName">
-                        <h4>
-                            @Model.Title
-                        </h4>
-                    </div>
-                    <div class="col-12 productPrice">
-                        <span>$@Model.Price</span>
-                    </div>
-                    <div class="col-12 productInfo mt-5">
-                        <p name="description">
-                            @Model.Description
-                        </p>
-                    </div>
-                   
-
+                        <!-- modal part -->
 
                     </div>
-                 
-                </div>
-            </div>
-
-            <!-- description -->
-            <div class="row" style="margin-top:60px;">
-                <div class="col-12">
-                    <button class="btnContent active">DESCRIPTION</button>
-                    <button class="btnReview" style="margin-left:30px;">
-                        REVIEWS (
-                        <span>5</span> )
-                    </button>
-
-
-                </div>
-                <div class="col-12 mt-5 content">
-                    <p>
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
-                        elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
-                        Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor
-                        eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                        Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque
-                        elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum
-                        feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
-                        <hr class="mt-5">
-
-                    </p>
-                </div>
-                <div class="col-12 mt-5 comment">
-                    <div class="row">
-                        <div class="col-12">
+                    <div class="col-lg-6">
+                        <div class="col-12 productName">
                             <h4>
-                                <span>5</span>&nbsp; Reviews Found
+                                @item.Title
                             </h4>
                         </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-1.jpg" alt="">
+                        <div class="col-12 productPrice">
+                            <span>$@item.Price</span>
                         </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Admin – April 03, 2017:
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-5.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Mark – January 01, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-2.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    George – June 03, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-3.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Erbil – August 01, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                        <div class="col-2 mt-4">
-                            <img src="http://monde.elitelayers.com/html/images/resource/author-4.jpg" alt="">
-                        </div>
-                        <div class="col-10 mt-4 rev-content" style="">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-info">
-                                    Sheraz – December 01, 2017:
-
-                                </div>
-                            </div>
-                            <div class="col-11 mt-3">
-                                <div class="rev-text">
-                                    <p>
-                                        Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
-                                        sociis natoque penatibus et magnis dis
-
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    <div class="row add-review" style="margin-top:75px;">
-                        <div class="col-12">
-
-                        </div>
-                        <div class="col-12">
-                            <!-- FORM -->
-
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Name*</label>
-                                    <input type="text" class="form-control" id="inputName" placeholder="">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Email*</label>
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="">
-                                </div>
-
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="website">Website</label>
-                                    <input type="text" class="form-control" id="website" placeholder="">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label style="padding-left:15px;" for="rating">Rating</label>
-                                    <div class="col-12">
-                                        <div class="users-rating">
-
-                                            <span class="fa fa-star"></span>
-                                            &nbsp;
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            &nbsp;
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            &nbsp;
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            &nbsp;
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Your Review</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-
-                            <button class="addBtn">
-                                add review
-                            </button>
+                        <div class="col-12 productInfo mt-5">
+                            <p name="description">
+                                @item.Description
+                            </p>
                         </div>
 
-                        <!-- FORM -->
+
+
                     </div>
 
                 </div>
+            }
+
+        </div>
+
+        <!-- description -->
+        <div class="row" style="margin-top:60px;">
+            <div class="col-12">
+                <button class="btnContent active">DESCRIPTION</button>
+                <button class="btnReview" style="margin-left:30px;">
+                    REVIEWS (
+                    <span>5</span> )
+                </button>
+
+
             </div>
+            <div class="col-12 mt-5 content">
+                <p>
+                    Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id
+                    elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.
+                    Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor
+                    eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque
+                    elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum
+                    feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+                    <hr class="mt-5">
+
+                </p>
+            </div>
+            <div class="col-12 mt-5 comment">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>
+                            <span>5</span>&nbsp; Reviews Found
+                        </h4>
+                    </div>
+                    <div class="col-2 mt-4">
+                        <img src="http://monde.elitelayers.com/html/images/resource/author-1.jpg" alt="">
+                    </div>
+                    <div class="col-10 mt-4 rev-content" style="">
+                        <div class="rating">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-info">
+                                Admin – April 03, 2017:
+                            </div>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-text">
+                                <p>
+                                    Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                    sociis natoque penatibus et magnis dis
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-2 mt-4">
+                        <img src="http://monde.elitelayers.com/html/images/resource/author-5.jpg" alt="">
+                    </div>
+                    <div class="col-10 mt-4 rev-content" style="">
+                        <div class="rating">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-info">
+                                Mark – January 01, 2017:
+
+                            </div>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-text">
+                                <p>
+                                    Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                    sociis natoque penatibus et magnis dis
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-2 mt-4">
+                        <img src="http://monde.elitelayers.com/html/images/resource/author-2.jpg" alt="">
+                    </div>
+                    <div class="col-10 mt-4 rev-content" style="">
+                        <div class="rating">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-info">
+                                George – June 03, 2017:
+
+                            </div>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-text">
+                                <p>
+                                    Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                    sociis natoque penatibus et magnis dis
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-2 mt-4">
+                        <img src="http://monde.elitelayers.com/html/images/resource/author-3.jpg" alt="">
+                    </div>
+                    <div class="col-10 mt-4 rev-content" style="">
+                        <div class="rating">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-info">
+                                Erbil – August 01, 2017:
+
+                            </div>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-text">
+                                <p>
+                                    Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                    sociis natoque penatibus et magnis dis
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="col-2 mt-4">
+                        <img src="http://monde.elitelayers.com/html/images/resource/author-4.jpg" alt="">
+                    </div>
+                    <div class="col-10 mt-4 rev-content" style="">
+                        <div class="rating">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-info">
+                                Sheraz – December 01, 2017:
+
+                            </div>
+                        </div>
+                        <div class="col-11 mt-3">
+                            <div class="rev-text">
+                                <p>
+                                    Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum
+                                    sociis natoque penatibus et magnis dis
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="row add-review" style="margin-top:75px;">
+                    <div class="col-12">
+
+                    </div>
+                    <div class="col-12">
+                        <!-- FORM -->
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Name*</label>
+                                <input type="text" class="form-control" id="inputName" placeholder="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email*</label>
+                                <input type="email" class="form-control" id="inputEmail4" placeholder="">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="website">Website</label>
+                                <input type="text" class="form-control" id="website" placeholder="">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label style="padding-left:15px;" for="rating">Rating</label>
+                                <div class="col-12">
+                                    <div class="users-rating">
+
+                                        <span class="fa fa-star"></span>
+                                        &nbsp;
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        &nbsp;
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        &nbsp;
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        &nbsp;
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Your Review</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                        <button class="addBtn">
+                            add review
+                        </button>
+                    </div>
+
+                    <!-- FORM -->
+                </div>
+
+            </div>
+        </div>
 
         </div>
 
