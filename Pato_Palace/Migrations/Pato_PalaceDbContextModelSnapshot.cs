@@ -354,6 +354,10 @@ namespace Pato_Palace.Migrations
                     b.Property<string>("UserId")
                         .IsRequired();
 
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(170);
+
                     b.HasKey("Id");
 
                     b.ToTable("Reserv_Tables");

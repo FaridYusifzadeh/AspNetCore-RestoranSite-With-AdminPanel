@@ -17,5 +17,7 @@ namespace Pato_Palace.Models
         public string Time { get; set; }
         [Required]
         public int Persone_Count { get; set; }
+        [Required, StringLength(170)]
+        public string Username { get; set; }
     }
 }

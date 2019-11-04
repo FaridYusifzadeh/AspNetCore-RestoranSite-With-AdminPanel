@@ -84,7 +84,7 @@ using Pato_Palace.Models;
                                 ");
             EndContext();
             BeginContext(654, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7c64b78c5654ea4a1e179a8c4d57869", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "990ab051e234492e95ef09ba80059b9f", async() => {
                 BeginContext(701, 42, true);
                 WriteLiteral(" <i class=\"fas fa-pencil-alt\"></i>  Create");
                 EndContext();
@@ -136,7 +136,7 @@ using Pato_Palace.Models;
             WriteLiteral("</td>\r\n                                <td>\r\n                                    ");
             EndContext();
             BeginContext(1232, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "188dada8643f4461bcd29f5462b4be40", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9ced07b450d3431d9cb96cc3fede42ec", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -183,7 +183,7 @@ AddHtmlAttributeValue("", 1269, rservationcontent.Image, 1269, 24, false);
             WriteLiteral("</td>\r\n\r\n\r\n                                <td>\r\n                                    ");
             EndContext();
             BeginContext(1658, 215, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b329e1083b1a4d3cac74520dbce7ba21", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08c2cc92869c4efdb790286d6404dee2", async() => {
                 BeginContext(1742, 127, true);
                 WriteLiteral("\r\n                                        <i class=\" fas fa-eye\" style=\"color:white\"></i>\r\n                                    ");
                 EndContext();
@@ -219,7 +219,7 @@ AddHtmlAttributeValue("", 1269, rservationcontent.Image, 1269, 24, false);
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(1911, 215, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acb4311188424f3f81cd2dbc2cc3017d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "260c9bd60a674caaa7656f8b85723693", async() => {
                 BeginContext(1995, 127, true);
                 WriteLiteral("\r\n                                        <i class=\"fas fa-edit\" style=\"color:white\"></i>\r\n                                    ");
                 EndContext();
@@ -255,7 +255,7 @@ AddHtmlAttributeValue("", 1269, rservationcontent.Image, 1269, 24, false);
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(2164, 219, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43502f3a74a54fceb9d702cf5af1a9cc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "812240eb73d2402b8fb840bbf88fa15e", async() => {
                 BeginContext(2247, 132, true);
                 WriteLiteral("\r\n                                        <i class=\"far fa-trash-alt\" style=\"color:white\"></i>\r\n                                    ");
                 EndContext();

@@ -264,6 +264,7 @@ namespace Pato_Palace.Controllers
             res.Date = date;
             res.Time = time;
             res.UserId = UserId;
+            res.Username = User.Identity.Name;
             res.Persone_Count =int.Parse(personCount);
             _context.Reserv_Tables.Add(res);
             _context.SaveChanges();

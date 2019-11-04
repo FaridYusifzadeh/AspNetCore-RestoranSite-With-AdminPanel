@@ -11,5 +11,6 @@ namespace Pato_Palace.Models
         public string AppUserId { get; set; }
 
         public int ShopNowProductId { get; set; }
+
     }
 }
